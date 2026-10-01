@@ -1,1002 +1,1198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Aura Events & Exhibitions | Events, Exhibitions & Experiences</title>
-
-  <meta name="description" content="Aura Events & Exhibitions organizes Dandiya Nights, exhibitions, concerts, corporate events, birthday parties and memorable experiences for everyone.">
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #fffaf5;
-      color: #222;
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* HEADER */
-
-    header {
-      background: #ffffff;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .nav-container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 12px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo img {
-      width: 55px;
-      height: 55px;
-      object-fit: contain;
-    }
-
-    .logo-text {
-      font-size: 20px;
-      font-weight: bold;
-      color: #8b1e3f;
-    }
-
-    .logo-text span {
-      display: block;
-      font-size: 12px;
-      font-weight: normal;
-      color: #666;
-    }
-
-    nav {
-      display: flex;
-      gap: 22px;
-      align-items: center;
-    }
-
-    nav a {
-      font-weight: bold;
-      color: #333;
-      font-size: 15px;
-    }
-
-    nav a:hover {
-      color: #8b1e3f;
-    }
-
-    .menu-btn {
-      display: none;
-      font-size: 28px;
-      cursor: pointer;
-    }
-
-    /* HERO */
-
-    .hero {
-      min-height: 620px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 70px 20px;
-      background:
-        linear-gradient(rgba(75, 10, 35, 0.82), rgba(75, 10, 35, 0.82)),
-        radial-gradient(circle at top, #e9b949, #8b1e3f 55%, #3d1020);
-      color: white;
-    }
-
-    .hero-content {
-      max-width: 900px;
-    }
-
-    .hero-logo {
-      width: 110px;
-      height: 110px;
-      object-fit: contain;
-      margin: 0 auto 25px;
-      background: white;
-      border-radius: 50%;
-      padding: 10px;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 18px;
-    }
-
-    .hero h1 span {
-      color: #ffd875;
-    }
-
-    .hero p {
-      font-size: 21px;
-      max-width: 750px;
-      margin: auto;
-      color: #fff;
-    }
-
-    .hero-buttons {
-      margin-top: 32px;
-      display: flex;
-      justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-      padding: 14px 25px;
-      border-radius: 8px;
-      font-weight: bold;
-      border: 2px solid white;
-      transition: 0.3s;
-    }
-
-    .btn-primary {
-      background: white;
-      color: #8b1e3f;
-    }
-
-    .btn-primary:hover {
-      background: #ffd875;
-      border-color: #ffd875;
-    }
-
-    .btn-outline {
-      color: white;
-    }
-
-    .btn-outline:hover {
-      background: white;
-      color: #8b1e3f;
-    }
-
-    /* COMMON */
-
-    section {
-      padding: 75px 20px;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: auto;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 45px;
-    }
-
-    .section-title h2 {
-      font-size: 36px;
-      color: #8b1e3f;
-      margin-bottom: 10px;
-    }
-
-    .section-title p {
-      color: #666;
-      font-size: 17px;
-    }
-
-    /* ABOUT */
-
-    .about {
-      background: white;
-    }
-
-    .about-content {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 45px;
-      align-items: center;
-    }
-
-    .about-text h3 {
-      font-size: 30px;
-      color: #8b1e3f;
-      margin-bottom: 15px;
-    }
-
-    .about-text p {
-      margin-bottom: 15px;
-      font-size: 17px;
-      color: #444;
-    }
-
-    .about-box {
-      background: #fff6e6;
-      padding: 30px;
-      border-left: 5px solid #d89b22;
-      border-radius: 10px;
-    }
-
-    .about-box h3 {
-      color: #8b1e3f;
-      margin-bottom: 12px;
-    }
-
-    /* SERVICES */
-
-    .services {
-      background: #fffaf5;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .service-card {
-      background: white;
-      padding: 30px 24px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-      transition: 0.3s;
-      border-top: 4px solid #8b1e3f;
-    }
-
-    .service-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .service-icon {
-      font-size: 40px;
-      margin-bottom: 15px;
-    }
-
-    .service-card h3 {
-      color: #8b1e3f;
-      margin-bottom: 10px;
-      font-size: 21px;
-    }
-
-    .service-card p {
-      color: #555;
-    }
-
-    /* WHY US */
-
-    .why-us {
-      background: white;
-    }
-
-    .why-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
-    }
-
-    .why-card {
-      padding: 25px;
-      background: #fff7e8;
-      border-radius: 10px;
-    }
-
-    .why-card h3 {
-      color: #8b1e3f;
-      margin-bottom: 8px;
-    }
-
-    /* FOUNDER */
-
-    .founder {
-      background: #fffaf5;
-    }
-
-    .founder-content {
-      max-width: 900px;
-      margin: auto;
-      display: grid;
-      grid-template-columns: 320px 1fr;
-      gap: 45px;
-      align-items: center;
-      background: white;
-      padding: 35px;
-      border-radius: 15px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.08);
-    }
-
-    .founder-image {
-      width: 100%;
-      max-height: 380px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-
-    .founder-text h3 {
-      font-size: 30px;
-      color: #8b1e3f;
-      margin-bottom: 12px;
-    }
-
-    .founder-text p {
-      color: #555;
-      margin-bottom: 15px;
-      font-size: 17px;
-    }
-
-    /* SIMPLE MESSAGE */
-
-    .message {
-      background: #8b1e3f;
-      color: white;
-      text-align: center;
-    }
-
-    .message h2 {
-      font-size: 35px;
-      margin-bottom: 15px;
-    }
-
-    .message p {
-      max-width: 750px;
-      margin: auto;
-      font-size: 18px;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background: white;
-    }
-
-    .contact-box {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-      background: #fff7e8;
-      padding: 40px 25px;
-      border-radius: 15px;
-    }
-
-    .contact-box h3 {
-      color: #8b1e3f;
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    .contact-box p {
-      margin-bottom: 20px;
-      color: #555;
-    }
-
-    .contact-note {
-      font-size: 14px;
-      color: #777;
-      margin-top: 18px;
-    }
-
-    /* FOOTER */
-
-    footer {
-      background: #2b101b;
-      color: white;
-      padding: 35px 20px;
-      text-align: center;
-    }
-
-    footer h3 {
-      font-size: 22px;
-      margin-bottom: 8px;
-    }
-
-    footer p {
-      color: #ddd;
-      margin-bottom: 8px;
-    }
-
-    .footer-copy {
-      margin-top: 20px;
-      padding-top: 20px;
-      border-top: 1px solid rgba(255,255,255,0.2);
-      font-size: 14px;
-      color: #bbb;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 850px) {
-
-      .menu-btn {
-        display: block;
-      }
-
-      nav {
-        display: none;
-        position: absolute;
-        top: 79px;
-        left: 0;
-        right: 0;
-        background: white;
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      }
-
-      nav.active {
-        display: flex;
-      }
-
-      .hero h1 {
-        font-size: 38px;
-      }
-
-      .hero p {
-        font-size: 18px;
-      }
-
-      .about-content {
-        grid-template-columns: 1fr;
-      }
-
-      .service-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .founder-content {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-
-      .founder-image {
-        max-width: 320px;
-        margin: auto;
-      }
-    }
-
-    @media (max-width: 550px) {
-
-      .logo-text {
-        font-size: 16px;
-      }
-
-      .logo-text span {
-        font-size: 10px;
-      }
-
-      .logo img {
-        width: 45px;
-        height: 45px;
-      }
-
-      .hero {
-        min-height: 570px;
-        padding: 50px 15px;
-      }
-
-      .hero h1 {
-        font-size: 31px;
-      }
-
-      .hero p {
-        font-size: 17px;
-      }
-
-      .section-title h2 {
-        font-size: 29px;
-      }
-
-      .service-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .why-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .founder-content {
-        padding: 25px 18px;
-      }
-
-      .message h2 {
-        font-size: 28px;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aura Events & Exhibitions</title>
+
+<meta name="description" content="Aura Events & Exhibitions - Events, Exhibitions, Dandiya Nights, Concerts, Corporate Events, Birthdays and Celebrations.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fffaf3;
+    color:#292020;
+    line-height:1.6;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:92%;
+    max-width:1150px;
+    margin:auto;
+}
+
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:#ffffff;
+    box-shadow:0 2px 15px rgba(0,0,0,.10);
+}
+
+.navbar{
+    min-height:82px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.brand-logo{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+    border-radius:8px;
+}
+
+.brand-name{
+    color:#74152d;
+    font-size:19px;
+    font-weight:800;
+    line-height:1.2;
+}
+
+.brand-name span{
+    display:block;
+    color:#777;
+    font-size:10px;
+    letter-spacing:1.5px;
+    font-weight:500;
+    margin-top:3px;
+}
+
+nav{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+nav a{
+    color:#33282b;
+    font-weight:600;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#a32246;
+}
+
+.menu{
+    display:none;
+    font-size:29px;
+    border:0;
+    background:none;
+    cursor:pointer;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(48,5,18,.96),
+            rgba(105,15,38,.86),
+            rgba(105,15,38,.65)
+        ),
+        url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+}
+
+.hero-content{
+    max-width:780px;
+    color:white;
+    padding:80px 0;
+}
+
+.hero-small{
+    display:inline-block;
+    padding:8px 17px;
+    border:1px solid rgba(255,220,140,.5);
+    border-radius:30px;
+    color:#ffe39b;
+    margin-bottom:22px;
+    font-size:13px;
+    font-weight:bold;
+}
+
+.hero h1{
+    font-size:clamp(42px,6vw,72px);
+    line-height:1.08;
+    margin-bottom:22px;
+}
+
+.hero h1 span{
+    color:#ffd25f;
+}
+
+.hero p{
+    font-size:19px;
+    color:#fff5f3;
+    max-width:700px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:13px;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 23px;
+    border-radius:30px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:#d4a52b;
+    color:#32120e;
+}
+
+.btn-primary:hover{
+    transform:translateY(-3px);
+}
+
+.btn-white{
+    color:white;
+    border:1px solid rgba(255,255,255,.6);
+}
+
+.btn-white:hover{
+    background:white;
+    color:#74152d;
+}
+
+/* ================= COMMON ================= */
+
+section{
+    padding:85px 0;
+}
+
+.heading{
+    text-align:center;
+    max-width:750px;
+    margin:0 auto 48px;
+}
+
+.heading-small{
+    color:#c47b08;
+    font-weight:800;
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.heading h2{
+    color:#74152d;
+    font-size:clamp(30px,4vw,45px);
+    margin:8px 0 12px;
+}
+
+.heading p{
+    color:#6d6264;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    background:#fff8e9;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:55px;
+    align-items:center;
+}
+
+.about-image{
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 15px 40px rgba(60,20,25,.14);
+}
+
+.about-image img{
+    width:100%;
+    height:450px;
+    object-fit:cover;
+}
+
+.about-text h2{
+    color:#74152d;
+    font-size:38px;
+    line-height:1.2;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    color:#51484a;
+    margin-bottom:16px;
+}
+
+.points{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+    margin-top:25px;
+}
+
+.point{
+    background:white;
+    padding:14px;
+    border-radius:10px;
+    border-left:4px solid #d4a52b;
+    font-weight:bold;
+    font-size:14px;
+}
+
+/* ================= SERVICES ================= */
+
+.services{
+    background:white;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:23px;
+}
+
+.service{
+    background:white;
+    border:1px solid #eee1d7;
+    border-radius:18px;
+    padding:28px 24px;
+    box-shadow:0 7px 25px rgba(50,20,25,.07);
+    transition:.3s;
+}
+
+.service:hover{
+    transform:translateY(-7px);
+    box-shadow:0 15px 35px rgba(50,20,25,.12);
+}
+
+.service-icon{
+    font-size:42px;
+    margin-bottom:13px;
+}
+
+.service h3{
+    color:#74152d;
+    font-size:21px;
+    margin-bottom:8px;
+}
+
+.service p{
+    color:#665c5e;
+    font-size:15px;
+}
+
+/* ================= WHY ================= */
+
+.why{
+    background:
+        linear-gradient(
+            rgba(55,5,20,.94),
+            rgba(55,5,20,.94)
+        ),
+        url("https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+    color:white;
+}
+
+.why .heading h2{
+    color:white;
+}
+
+.why .heading p{
+    color:#eadfe0;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.why-card{
+    text-align:center;
+    padding:28px 18px;
+    border:1px solid rgba(255,255,255,.16);
+    border-radius:16px;
+    background:rgba(255,255,255,.05);
+}
+
+.why-icon{
+    font-size:35px;
+    margin-bottom:10px;
+}
+
+.why-card h3{
+    margin-bottom:8px;
+}
+
+.why-card p{
+    color:#e4d7da;
+    font-size:14px;
+}
+
+/* ================= FOUNDER ================= */
+
+.founder{
+    background:#fff8e9;
+}
+
+.founder-box{
+    max-width:1000px;
+    margin:auto;
+    background:white;
+    border-radius:22px;
+    padding:35px;
+    display:grid;
+    grid-template-columns:350px 1fr;
+    gap:45px;
+    align-items:center;
+    box-shadow:0 12px 35px rgba(60,20,25,.10);
+}
+
+.founder-photo{
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    object-position:center;
+    border-radius:16px;
+}
+
+.founder-text h2{
+    color:#74152d;
+    font-size:36px;
+    margin-bottom:15px;
+}
+
+.founder-text h3{
+    color:#c47b08;
+    margin-bottom:18px;
+    font-size:18px;
+}
+
+.founder-text p{
+    color:#51484a;
+    margin-bottom:16px;
+}
+
+/* ================= MESSAGE ================= */
+
+.message{
+    background:linear-gradient(120deg,#74152d,#9d2347);
+    color:white;
+    text-align:center;
+}
+
+.message h2{
+    font-size:clamp(30px,4vw,48px);
+    margin-bottom:12px;
+}
+
+.message p{
+    max-width:700px;
+    margin:auto;
+    color:#f7e9ea;
+    font-size:17px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+    background:white;
+}
+
+.contact-box{
+    max-width:850px;
+    margin:auto;
+    background:#fff8e9;
+    border-radius:20px;
+    padding:45px 30px;
+    text-align:center;
+}
+
+.contact-box h2{
+    color:#74152d;
+    font-size:35px;
+    margin-bottom:15px;
+}
+
+.contact-box p{
+    color:#62585a;
+    margin-bottom:20px;
+}
+
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+    margin-top:25px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#290610;
+    color:white;
+    text-align:center;
+    padding:40px 20px 22px;
+}
+
+footer h3{
+    font-size:23px;
+    margin-bottom:7px;
+}
+
+footer p{
+    color:#d5c4c8;
+    font-size:14px;
+}
+
+.copyright{
+    margin-top:22px;
+    padding-top:18px;
+    border-top:1px solid rgba(255,255,255,.12);
+    color:#aa969b;
+    font-size:12px;
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:950px){
+
+    nav{
+        gap:15px;
+    }
+
+    .service-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .why-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:750px){
+
+    .navbar{
+        min-height:72px;
+    }
+
+    .brand-logo{
+        width:52px;
+        height:52px;
+    }
+
+    .brand-name{
+        font-size:16px;
+    }
+
+    .brand-name span{
+        font-size:8px;
+    }
+
+    .menu{
+        display:block;
+    }
+
+    nav{
+        display:none;
+        position:absolute;
+        left:0;
+        right:0;
+        top:72px;
+        background:white;
+        padding:20px;
+        flex-direction:column;
+        box-shadow:0 12px 25px rgba(0,0,0,.12);
+    }
+
+    nav.active{
+        display:flex;
+    }
+
+    .about-grid{
+        grid-template-columns:1fr;
+    }
+
+    .about-image img{
+        height:350px;
+    }
+
+    .founder-box{
+        grid-template-columns:1fr;
+        padding:25px;
+    }
+
+    .founder-photo{
+        max-width:400px;
+        margin:auto;
+        height:auto;
+        max-height:500px;
+    }
+}
+
+@media(max-width:550px){
+
+    section{
+        padding:65px 0;
+    }
+
+    .hero{
+        min-height:590px;
+    }
+
+    .hero-content{
+        padding:60px 0;
+    }
+
+    .hero h1{
+        font-size:39px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .service-grid,
+    .why-grid{
+        grid-template-columns:1fr;
+    }
+
+    .points{
+        grid-template-columns:1fr;
+    }
+
+    .about-text h2{
+        font-size:31px;
+    }
+
+    .founder-text h2{
+        font-size:30px;
+    }
+
+    .contact-box{
+        padding:32px 20px;
+    }
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
+<!-- ================= HEADER ================= -->
 
-  <header>
-    <div class="nav-container">
+<header>
 
-      <a href="#home" class="logo">
-        <img src="aura-logo.png" alt="Aura Events & Exhibitions Logo">
+<div class="container navbar">
 
-        <div class="logo-text">
-          Aura Events & Exhibitions
-          <span>Events • Exhibitions • Experiences</span>
-        </div>
-      </a>
+<a href="#home" class="brand">
 
-      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+<img
+src="./aura-logo.png"
+alt="Aura Events & Exhibitions Logo"
+class="brand-logo"
+>
 
-      <nav id="navbar">
-        <a href="#home" onclick="closeMenu()">Home</a>
-        <a href="#about" onclick="closeMenu()">About</a>
-        <a href="#services" onclick="closeMenu()">Our Events</a>
-        <a href="#founder" onclick="closeMenu()">Founder</a>
-        <a href="#contact" onclick="closeMenu()">Contact</a>
-      </nav>
+<div class="brand-name">
+Aura Events & Exhibitions
+<span>EVENTS • EXHIBITIONS • EXPERIENCES</span>
+</div>
 
-    </div>
-  </header>
+</a>
 
+<button class="menu" onclick="toggleMenu()" aria-label="Open Menu">
+☰
+</button>
 
-  <!-- HERO -->
+<nav id="nav">
 
-  <section class="hero" id="home">
+<a href="#home" onclick="closeMenu()">Home</a>
+<a href="#about" onclick="closeMenu()">About</a>
+<a href="#services" onclick="closeMenu()">Events</a>
+<a href="#founder" onclick="closeMenu()">Founder</a>
+<a href="#contact" onclick="closeMenu()">Contact</a>
 
-    <div class="hero-content">
+</nav>
 
-      <img
-        src="aura-logo.png"
-        alt="Aura Events & Exhibitions"
-        class="hero-logo"
-      >
+</div>
 
-      <h1>
-        Welcome to <span>Aura Events & Exhibitions</span>
-      </h1>
+</header>
 
-      <p>
-        Creating memorable events, exhibitions and experiences
-        for everyone.
-      </p>
 
-      <div class="hero-buttons">
-        <a href="#services" class="btn btn-primary">
-          Explore Our Events
-        </a>
+<!-- ================= HERO ================= -->
 
-        <a href="#contact" class="btn btn-outline">
-          Contact Us
-        </a>
-      </div>
+<section class="hero" id="home">
 
-    </div>
+<div class="container">
 
-  </section>
+<div class="hero-content">
 
+<div class="hero-small">
+EVENTS • EXHIBITIONS • CELEBRATIONS
+</div>
 
-  <!-- ABOUT -->
+<h1>
+We create
+<span>experiences</span>
+people remember.
+</h1>
 
-  <section class="about" id="about">
+<p>
+From Dandiya Nights and exhibitions to concerts,
+corporate events, birthdays and special celebrations —
+Aura Events & Exhibitions brings people together
+and creates memorable experiences.
+</p>
 
-    <div class="container">
+<div class="buttons">
 
-      <div class="section-title">
-        <h2>About Aura</h2>
-        <p>Events made simple, memorable and enjoyable for everyone.</p>
-      </div>
+<a href="#services" class="btn btn-primary">
+Explore Our Events
+</a>
 
-      <div class="about-content">
+<a href="#contact" class="btn btn-white">
+Contact Us
+</a>
 
-        <div class="about-text">
+</div>
 
-          <h3>We Create Experiences</h3>
+</div>
 
-          <p>
-            Aura Events & Exhibitions is an event and exhibition
-            organization focused on creating enjoyable and memorable
-            experiences for people.
-          </p>
+</div>
 
-          <p>
-            From colourful Dandiya Nights to exhibitions, concerts,
-            corporate events and private celebrations, we bring
-            people together and create moments worth remembering.
-          </p>
+</section>
 
-          <p>
-            Our goal is simple — an event should be easy to understand,
-            enjoyable to attend and memorable for everyone.
-          </p>
 
-        </div>
+<!-- ================= ABOUT ================= -->
 
-        <div class="about-box">
+<section class="about" id="about">
 
-          <h3>Our Vision</h3>
+<div class="container">
 
-          <p>
-            To create meaningful events and experiences where
-            everyone feels welcome — whether it is a family,
-            student, professional, business owner or visitor.
-          </p>
+<div class="heading">
 
-          <br>
+<div class="heading-small">
+ABOUT AURA
+</div>
 
-          <h3>Our Approach</h3>
+<h2>
+Events should be simple to understand and memorable to experience.
+</h2>
 
-          <p>
-            Simple planning. Good organization. Great experiences.
-          </p>
+<p>
+We create and organize different kinds of events and exhibitions
+for people, businesses, families and organizations.
+</p>
 
-        </div>
+</div>
 
-      </div>
 
-    </div>
+<div class="about-grid">
 
-  </section>
+<div class="about-image">
 
+<img
+src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?auto=format&fit=crop&w=1000&q=85"
+alt="Event celebration"
+>
 
-  <!-- SERVICES -->
+</div>
 
-  <section class="services" id="services">
 
-    <div class="container">
+<div class="about-text">
 
-      <div class="section-title">
+<h2>
+Your idea. Our creativity. One memorable experience.
+</h2>
 
-        <h2>What We Do</h2>
+<p>
+Aura Events & Exhibitions is an event and exhibition organization
+focused on creating enjoyable, well-organized and memorable events.
+</p>
 
-        <p>
-          Different events for different occasions.
-        </p>
+<p>
+We work across different types of events — from cultural celebrations
+and Dandiya Nights to exhibitions, concerts, corporate gatherings,
+birthdays and private celebrations.
+</p>
 
-      </div>
+<p>
+Our aim is simple: make events easy to understand, enjoyable to attend
+and memorable for everyone.
+</p>
 
 
-      <div class="service-grid">
+<div class="points">
 
+<div class="point">
+✓ Simple Communication
+</div>
 
-        <div class="service-card">
+<div class="point">
+✓ Well Organized Events
+</div>
 
-          <div class="service-icon">🎉</div>
+<div class="point">
+✓ Experiences for Everyone
+</div>
 
-          <h3>Dandiya Nights</h3>
+<div class="point">
+✓ Multiple Event Formats
+</div>
 
-          <p>
-            Colourful and energetic Dandiya events with music,
-            dance, entertainment and a festive atmosphere.
-          </p>
+</div>
 
-        </div>
+</div>
 
+</div>
 
-        <div class="service-card">
+</div>
 
-          <div class="service-icon">🛍️</div>
+</section>
 
-          <h3>Exhibitions</h3>
 
-          <p>
-            Jewellery, clothing, automobile, lifestyle,
-            products and other exhibitions connecting
-            businesses with people.
-          </p>
+<!-- ================= SERVICES ================= -->
 
-        </div>
+<section class="services" id="services">
 
+<div class="container">
 
-        <div class="service-card">
+<div class="heading">
 
-          <div class="service-icon">🎵</div>
+<div class="heading-small">
+WHAT WE DO
+</div>
 
-          <h3>Concerts</h3>
+<h2>
+Our Events & Experiences
+</h2>
 
-          <p>
-            Music and entertainment events designed to bring
-            artists and audiences together.
-          </p>
+<p>
+Different occasions. Different experiences. One trusted event platform.
+</p>
 
-        </div>
+</div>
 
 
-        <div class="service-card">
+<div class="service-grid">
 
-          <div class="service-icon">🏢</div>
 
-          <h3>Corporate Events</h3>
+<div class="service">
 
-          <p>
-            Professional events, gatherings and experiences
-            for companies, teams and organizations.
-          </p>
+<div class="service-icon">🎉</div>
 
-        </div>
+<h3>Dandiya Nights</h3>
 
+<p>
+Festive Dandiya events with music, dance, entertainment
+and an energetic atmosphere for everyone.
+</p>
 
-        <div class="service-card">
+</div>
 
-          <div class="service-icon">🎂</div>
 
-          <h3>Birthday & Private Events</h3>
+<div class="service">
 
-          <p>
-            Celebrations for birthdays, family functions,
-            private parties and special occasions.
-          </p>
+<div class="service-icon">🛍️</div>
 
-        </div>
+<h3>Exhibitions</h3>
 
+<p>
+Jewellery, clothing, lifestyle, automobile, product
+and other exhibitions connecting businesses with visitors.
+</p>
 
-        <div class="service-card">
+</div>
 
-          <div class="service-icon">✨</div>
 
-          <h3>Special Events</h3>
+<div class="service">
 
-          <p>
-            We also create and organize different types of
-            events according to the occasion and requirement.
-          </p>
+<div class="service-icon">🎵</div>
 
-        </div>
+<h3>Concerts</h3>
 
+<p>
+Music and entertainment events bringing artists,
+performers and audiences together.
+</p>
 
-      </div>
+</div>
 
-    </div>
 
-  </section>
+<div class="service">
 
+<div class="service-icon">🏢</div>
 
-  <!-- WHY AURA -->
+<h3>Corporate Events</h3>
 
-  <section class="why-us">
+<p>
+Professional gatherings, company events, team events
+and experiences for organizations.
+</p>
 
-    <div class="container">
+</div>
 
-      <div class="section-title">
 
-        <h2>Why Aura?</h2>
+<div class="service">
 
-        <p>
-          Our focus is on people and their experience.
-        </p>
+<div class="service-icon">🎂</div>
 
-      </div>
+<h3>Birthday & Private Events</h3>
 
+<p>
+Birthday parties, family functions, private celebrations
+and special occasions.
+</p>
 
-      <div class="why-grid">
+</div>
 
 
-        <div class="why-card">
+<div class="service">
 
-          <h3>Easy to Understand</h3>
+<div class="service-icon">✨</div>
 
-          <p>
-            We keep our communication simple so everyone can
-            understand what the event is about.
-          </p>
+<h3>Special Events</h3>
 
-        </div>
+<p>
+Custom events and celebrations planned according to
+the occasion, audience and requirement.
+</p>
 
+</div>
 
-        <div class="why-card">
 
-          <h3>For Everyone</h3>
+</div>
 
-          <p>
-            Our events are designed to welcome people from
-            different backgrounds and age groups.
-          </p>
+</div>
 
-        </div>
+</section>
 
 
-        <div class="why-card">
+<!-- ================= WHY AURA ================= -->
 
-          <h3>Memorable Experiences</h3>
+<section class="why">
 
-          <p>
-            We focus on creating moments that people can
-            enjoy and remember.
-          </p>
+<div class="container">
 
-        </div>
+<div class="heading">
 
+<div class="heading-small">
+OUR APPROACH
+</div>
 
-        <div class="why-card">
+<h2>
+Why Aura Events & Exhibitions?
+</h2>
 
-          <h3>Different Types of Events</h3>
+<p>
+We focus on making events understandable, enjoyable
+and memorable for everyone.
+</p>
 
-          <p>
-            From exhibitions and entertainment to celebrations
-            and corporate events, we work across many event formats.
-          </p>
+</div>
 
-        </div>
 
+<div class="why-grid">
 
-      </div>
 
-    </div>
+<div class="why-card">
 
-  </section>
+<div class="why-icon">🤝</div>
 
+<h3>For Everyone</h3>
 
-  <!-- FOUNDER -->
+<p>
+Our events are designed to welcome people from different
+backgrounds and age groups.
+</p>
 
-  <section class="founder" id="founder">
+</div>
 
-    <div class="container">
 
-      <div class="section-title">
+<div class="why-card">
 
-        <h2>Meet the Founder</h2>
+<div class="why-icon">💡</div>
 
-        <p>
-          The person behind Aura Events & Exhibitions.
-        </p>
+<h3>Creative Ideas</h3>
 
-      </div>
+<p>
+We turn event ideas into experiences that people can enjoy.
+</p>
 
+</div>
 
-      <div class="founder-content">
 
-        <div>
+<div class="why-card">
 
-          <img
-            src="founder.png"
-            alt="Founder of Aura Events & Exhibitions"
-            class="founder-image"
-          >
+<div class="why-icon">📋</div>
 
-        </div>
+<h3>Organized Planning</h3>
 
+<p>
+Good planning and clear communication are important parts
+of every successful event.
+</p>
 
-        <div class="founder-text">
+</div>
 
-          <h3>Founder</h3>
 
-          <p>
-            Aura Events & Exhibitions was created with the idea
-            of bringing people together through meaningful,
-            enjoyable and well-organized events.
-          </p>
+<div class="why-card">
 
-          <p>
-            The focus is to build events that people can
-            understand, enjoy and remember.
-          </p>
+<div class="why-icon">⭐</div>
 
-          <p>
-            From cultural celebrations and exhibitions to
-            concerts, corporate events and private celebrations,
-            Aura aims to create experiences for everyone.
-          </p>
+<h3>Memorable Experiences</h3>
 
-        </div>
+<p>
+Our goal is to create moments people enjoy and remember.
+</p>
 
-      </div>
+</div>
 
-    </div>
 
-  </section>
+</div>
 
+</div>
 
-  <!-- MESSAGE -->
+</section>
 
-  <section class="message">
 
-    <div class="container">
+<!-- ================= FOUNDER ================= -->
 
-      <h2>Every Event Should Become a Memory</h2>
+<section class="founder" id="founder">
 
-      <p>
-        Whether it is a celebration, exhibition, concert,
-        corporate gathering or cultural event —
-        we believe every occasion deserves a special experience.
-      </p>
+<div class="container">
 
-    </div>
+<div class="heading">
 
-  </section>
+<div class="heading-small">
+THE PERSON BEHIND AURA
+</div>
 
+<h2>
+Meet the Founder
+</h2>
 
-  <!-- CONTACT -->
+<p>
+The vision behind Aura Events & Exhibitions.
+</p>
 
-  <section class="contact" id="contact">
+</div>
 
-    <div class="container">
 
-      <div class="section-title">
+<div class="founder-box">
 
-        <h2>Contact Aura</h2>
 
-        <p>
-          Have an event idea or want to work with us?
-        </p>
+<div>
 
-      </div>
+<img
+src="./founder.png"
+alt="Founder of Aura Events & Exhibitions"
+class="founder-photo"
+>
+    
+</div>
 
 
-      <div class="contact-box">
+<div class="founder-text">
 
-        <h3>Let's Create Something Memorable</h3>
+<h2>
+Founder
+</h2>
 
-        <p>
-          For event enquiries, exhibitions, collaborations,
-          sponsorships or other event-related requirements,
-          please get in touch with Aura Events & Exhibitions.
-        </p>
+<h3>
+Aura Events & Exhibitions
+</h3>
 
-        <p>
-          We look forward to creating something special together.
-        </p>
+<p>
+Aura Events & Exhibitions was created with the idea of bringing
+people together through meaningful, enjoyable and well-organized
+events.
+</p>
 
-        <p class="contact-note">
-          Contact details and enquiry options can be added here.
-        </p>
+<p>
+The focus is to create experiences that people can understand,
+enjoy and remember — whether it is a cultural celebration,
+exhibition, concert, corporate event or private celebration.
+</p>
 
-      </div>
+<p>
+Aura aims to build an event platform where different people,
+businesses and communities can come together and create
+something memorable.
+</p>
 
-    </div>
+</div>
 
-  </section>
+</div>
 
+</div>
 
-  <!-- FOOTER -->
+</section>
 
-  <footer>
 
-    <h3>Aura Events & Exhibitions</h3>
+<!-- ================= MESSAGE ================= -->
 
-    <p>
-      Events • Exhibitions • Experiences
-    </p>
+<section class="message">
 
-    <p>
-      Creating memorable events and experiences for everyone.
-    </p>
+<div class="container">
 
-    <div class="footer-copy">
-      © 2026 Aura Events & Exhibitions. All Rights Reserved.
-    </div>
+<h2>
+Every Event Should Become a Memory
+</h2>
 
-  </footer>
+<p>
+Whether it is a celebration, exhibition, concert,
+corporate gathering or cultural event — every occasion
+deserves a special experience.
+</p>
 
+</div>
 
-  <!-- MOBILE MENU SCRIPT -->
+</section>
 
-  <script>
 
-    function toggleMenu() {
-      document.getElementById("navbar").classList.toggle("active");
-    }
+<!-- ================= CONTACT ================= -->
 
-    function closeMenu() {
-      document.getElementById("navbar").classList.remove("active");
-    }
+<section class="contact" id="contact">
 
-  </script>
+<div class="container">
+
+<div class="heading">
+
+<div class="heading-small">
+GET IN TOUCH
+</div>
+
+<h2>
+Let's Create Something Memorable
+</h2>
+
+<p>
+Have an event idea, exhibition requirement or collaboration proposal?
+Connect with Aura Events & Exhibitions.
+</p>
+
+</div>
+
+
+<div class="contact-box">
+
+<h2>
+Aura Events & Exhibitions
+</h2>
+
+<p>
+For event enquiries, exhibitions, concerts, corporate events,
+celebrations, collaborations and sponsorship opportunities,
+please get in touch with us.
+</p>
+
+<p>
+We look forward to creating something special together.
+</p>
+
+
+<div class="contact-buttons">
+
+<a
+href="#home"
+class="btn btn-primary"
+>
+Back to Home
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<div class="container">
+
+<h3>
+Aura Events & Exhibitions
+</h3>
+
+<p>
+Events • Exhibitions • Experiences
+</p>
+
+<p>
+Creating memorable events and experiences for everyone.
+</p>
+
+<div class="copyright">
+© 2026 Aura Events & Exhibitions. All Rights Reserved.
+</div>
+
+</div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+    document.getElementById("nav").classList.toggle("active");
+
+}
+
+function closeMenu(){
+
+    document.getElementById("nav").classList.remove("active");
+
+}
+
+</script>
 
 </body>
 </html>
