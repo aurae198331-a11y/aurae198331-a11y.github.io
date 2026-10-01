@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
   <meta charset="UTF-8">
 
@@ -7,13 +7,73 @@
 
   <title>AuraEvents</title>
 
-  <meta name="description" content="AuraEvents - Dandiya Nights, exhibitions, cultural events, corporate events, family celebrations and special events in Jharkhand.">
+  <meta name="description"
+        content="AuraEvents - Dandiya Nights, exhibitions, cultural events, corporate events, family celebrations and special events in Jharkhand.">
 
-  <meta name="keywords" content="AuraEvents, Aura Events, Dandiya Night, Dandiya Garba, exhibitions, events, Jharkhand, Bokaro, Dhanbad, event management">
+  <meta name="keywords"
+        content="AuraEvents, Aura Events, Dandiya Night, Garba Night, exhibitions, jewellery exhibition, clothing exhibition, automobile exhibition, concerts, corporate events, birthday events, Jharkhand events, Dhanbad events, Bokaro events">
 
   <meta name="author" content="AuraEvents - Mrs Aura Bhushan">
 
+  <meta name="robots" content="index, follow">
+
+  <meta name="theme-color" content="#71152f">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="aura-logo.png">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="AuraEvents">
+  <meta property="og:description"
+        content="Dandiya Nights, exhibitions, concerts, corporate events, family celebrations and special events.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aurae198331-a11y.github.io/">
+  <meta property="og:image"
+        content="https://aurae198331-a11y.github.io/aura-logo.png">
+
+  <!-- Twitter / Social Sharing -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AuraEvents">
+  <meta name="twitter:description"
+        content="Dandiya Nights, exhibitions, concerts, corporate events, family celebrations and special events.">
+  <meta name="twitter:image"
+        content="https://aurae198331-a11y.github.io/aura-logo.png">
+
+  <!-- Organization Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "AuraEvents",
+    "alternateName": "Aura Events & Exhibitions",
+    "url": "https://aurae198331-a11y.github.io/",
+    "logo": "https://aurae198331-a11y.github.io/aura-logo.png",
+    "description": "AuraEvents organizes Dandiya Nights, exhibitions, concerts, corporate events, birthday celebrations, family events and special events.",
+    "telephone": "+91-9471740169",
+    "email": "aurae198331@gmail.com",
+    "address": [
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "E61 City Centre Sector 4",
+        "addressLocality": "Bokaro Steel City",
+        "addressRegion": "Jharkhand",
+        "postalCode": "827004",
+        "addressCountry": "IN"
+      },
+      {
+        "@type": "PostalAddress",
+        "streetAddress": "Dhaiya",
+        "addressLocality": "Dhanbad",
+        "addressRegion": "Jharkhand",
+        "postalCode": "826004",
+        "addressCountry": "IN"
+      }
+    ]
+  }
+  </script>
+
   <style>
+
     * {
       margin: 0;
       padding: 0;
@@ -21,10 +81,22 @@
       scroll-behavior: smooth;
     }
 
+    :root {
+      --maroon: #71152f;
+      --dark-maroon: #430d1f;
+      --gold: #d5a52c;
+      --light-gold: #f5dc8b;
+      --cream: #fff9ed;
+      --orange: #c85d1a;
+      --brown: #4a3029;
+      --text: #33272a;
+      --white: #ffffff;
+    }
+
     body {
       font-family: Arial, Helvetica, sans-serif;
-      background: #fff9ed;
-      color: #33272a;
+      background: var(--cream);
+      color: var(--text);
       line-height: 1.6;
     }
 
@@ -39,138 +111,85 @@
     }
 
     /* HEADER */
+
     header {
-      background: #71152f;
-      color: white;
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+      background: var(--maroon);
+      box-shadow: 0 3px 15px rgba(0,0,0,0.18);
     }
 
     .navbar {
       max-width: 1200px;
       margin: auto;
-      padding: 12px 20px;
+      min-height: 78px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 20px;
     }
 
-    .logo-area {
+    .brand {
       display: flex;
       align-items: center;
       gap: 12px;
-    }
-
-    .logo-area img {
-      width: 58px;
-      height: 58px;
-      object-fit: contain;
-      border-radius: 50%;
-      background: white;
-    }
-
-    .brand-name {
-      font-size: 24px;
+      color: var(--white);
       font-weight: bold;
-      color: #f5dc8b;
+      font-size: 24px;
+      white-space: nowrap;
     }
 
-    nav ul {
-      list-style: none;
+    .brand img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      background: var(--white);
+      border-radius: 50%;
+      padding: 3px;
+    }
+
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 20px;
+      justify-content: center;
+      gap: 6px;
+      list-style: none;
+      flex-wrap: wrap;
     }
 
-    nav ul li a {
-      color: white;
-      font-weight: bold;
-      font-size: 15px;
+    .nav-links a {
+      color: var(--white);
+      padding: 9px 12px;
+      border-radius: 5px;
+      font-size: 14px;
+      font-weight: 600;
       transition: 0.3s;
     }
 
-    nav ul li a:hover {
-      color: #f5dc8b;
+    .nav-links a:hover {
+      background: var(--gold);
+      color: var(--dark-maroon);
     }
 
     .menu-btn {
       display: none;
-      font-size: 28px;
+      color: var(--white);
+      background: none;
+      border: none;
+      font-size: 30px;
       cursor: pointer;
     }
 
-    /* HERO */
-    .hero {
-      min-height: 82vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 20px;
-      background:
-        linear-gradient(rgba(67,13,31,0.86), rgba(67,13,31,0.86)),
-        url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1600&q=80")
-        center/cover no-repeat;
-      color: white;
-    }
-
-    .hero-content {
-      max-width: 900px;
-    }
-
-    .hero-logo {
-      width: 145px;
-      height: 145px;
-      object-fit: contain;
-      margin: 0 auto 20px;
-      border-radius: 50%;
-      background: white;
-      padding: 8px;
-    }
-
-    .hero h1 {
-      font-size: 52px;
-      color: #f5dc8b;
-      margin-bottom: 15px;
-    }
-
-    .hero h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    .hero p {
-      font-size: 19px;
-      max-width: 760px;
-      margin: auto;
-    }
-
-    .hero-btn {
-      display: inline-block;
-      margin-top: 25px;
-      padding: 13px 28px;
-      background: #d5a52c;
-      color: #430d1f;
-      font-weight: bold;
-      border-radius: 30px;
-      transition: 0.3s;
-    }
-
-    .hero-btn:hover {
-      background: #f5dc8b;
-      transform: translateY(-2px);
-    }
-
     /* COMMON */
+
     section {
-      padding: 70px 20px;
+      padding: 75px 20px;
     }
 
     .container {
-      max-width: 1200px;
+      max-width: 1150px;
       margin: auto;
     }
 
@@ -180,197 +199,365 @@
     }
 
     .section-title h2 {
-      color: #71152f;
-      font-size: 36px;
+      color: var(--maroon);
+      font-size: 34px;
       margin-bottom: 10px;
     }
 
     .section-title p {
       max-width: 750px;
       margin: auto;
-      color: #66565a;
+      color: #66575a;
+    }
+
+    .gold-line {
+      width: 70px;
+      height: 4px;
+      background: var(--gold);
+      margin: 14px auto 0;
+      border-radius: 10px;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: var(--white);
+      background:
+        linear-gradient(
+          rgba(67,13,31,0.82),
+          rgba(113,21,47,0.82)
+        ),
+        url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      margin: auto;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      line-height: 1.15;
+      margin-bottom: 18px;
+      color: var(--light-gold);
+    }
+
+    .hero h2 {
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: auto auto 28px;
+      font-size: 18px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: 0.3s;
+      border: 2px solid transparent;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--dark-maroon);
+    }
+
+    .btn-gold:hover {
+      background: var(--light-gold);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border-color: var(--light-gold);
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--maroon);
     }
 
     /* ABOUT */
+
     .about {
-      background: #fff9ed;
+      background: var(--white);
     }
 
-    .about-content {
-      max-width: 950px;
-      margin: auto;
-      text-align: center;
-      font-size: 18px;
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 45px;
+      align-items: center;
     }
 
-    /* UPCOMING EVENTS */
-    .upcoming-events {
-      background: #fff3d6;
-    }
-
-    .upcoming-card {
-      max-width: 900px;
-      margin: auto;
-      background: white;
-      border-radius: 18px;
-      padding: 35px;
-      border-left: 7px solid #d5a52c;
-      box-shadow: 0 8px 25px rgba(67,13,31,0.12);
-    }
-
-    .upcoming-card h3 {
-      color: #71152f;
-      font-size: 30px;
+    .about-text h3 {
+      color: var(--maroon);
+      font-size: 28px;
       margin-bottom: 15px;
     }
 
-    .upcoming-card p {
-      font-size: 18px;
-      color: #4a3029;
+    .about-text p {
+      margin-bottom: 15px;
+      color: #594d4f;
+    }
+
+    .about-box {
+      background: linear-gradient(135deg, var(--maroon), var(--dark-maroon));
+      color: var(--white);
+      padding: 35px;
+      border-radius: 15px;
+      box-shadow: 0 12px 30px rgba(67,13,31,0.20);
+    }
+
+    .about-box h3 {
+      color: var(--light-gold);
+      margin-bottom: 15px;
+      font-size: 25px;
+    }
+
+    .about-box p {
+      margin-bottom: 12px;
+    }
+
+    /* UPCOMING */
+
+    .upcoming {
+      background: #fff3d8;
+    }
+
+    .event-card {
+      max-width: 900px;
+      margin: auto;
+      background: var(--white);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 12px 30px rgba(67,13,31,0.13);
+      border: 1px solid #efdba9;
+    }
+
+    .event-top {
+      background:
+        linear-gradient(
+          135deg,
+          var(--maroon),
+          var(--dark-maroon)
+        );
+      color: var(--white);
+      padding: 35px;
+      text-align: center;
+    }
+
+    .event-top span {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--dark-maroon);
+      padding: 7px 18px;
+      border-radius: 20px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .event-top h3 {
+      font-size: 38px;
+      color: var(--light-gold);
+    }
+
+    .event-body {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .event-body p {
+      max-width: 780px;
+      margin: auto;
+      font-size: 17px;
+      color: #54484b;
     }
 
     /* SERVICES */
+
     .services {
-      background: #fff;
+      background: var(--cream);
     }
 
-    .service-grid {
+    .services-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 25px;
     }
 
     .service-card {
-      background: #fff9ed;
-      border-radius: 15px;
+      background: var(--white);
+      border-radius: 14px;
       overflow: hidden;
-      box-shadow: 0 7px 20px rgba(0,0,0,0.1);
+      box-shadow: 0 7px 22px rgba(67,13,31,0.10);
       transition: 0.3s;
-      border: 1px solid #f0dfb7;
+      border: 1px solid #f0e4cf;
     }
 
     .service-card:hover {
-      transform: translateY(-5px);
+      transform: translateY(-7px);
+      box-shadow: 0 15px 30px rgba(67,13,31,0.16);
     }
 
     .service-card img {
       width: 100%;
-      height: 220px;
+      height: 190px;
       object-fit: cover;
     }
 
     .service-content {
-      padding: 20px;
+      padding: 22px;
     }
 
     .service-content h3 {
-      color: #71152f;
+      color: var(--maroon);
+      margin-bottom: 9px;
       font-size: 21px;
-      margin-bottom: 8px;
     }
 
     .service-content p {
-      color: #5e5053;
+      color: #64585a;
       font-size: 15px;
     }
 
     .festival-card {
-      min-height: 220px;
+      min-height: 238px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background: linear-gradient(135deg, #fff9ed, #f5dc8b);
+      background:
+        linear-gradient(
+          135deg,
+          #fff8e6,
+          #fff1ce
+        );
     }
 
     /* DANDIYA FEATURE */
+
     .dandiya-feature {
-      min-height: 430px;
-      display: flex;
-      align-items: center;
       background:
-        linear-gradient(rgba(67,13,31,0.75), rgba(67,13,31,0.75)),
-        url("https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=1600&q=80")
-        center/cover no-repeat;
-      color: white;
+        linear-gradient(
+          rgba(67,13,31,0.87),
+          rgba(67,13,31,0.87)
+        ),
+        url("https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=1800&q=85")
+        center/cover fixed;
+      color: var(--white);
+    }
+
+    .dandiya-inner {
+      max-width: 900px;
+      margin: auto;
       text-align: center;
     }
 
-    .dandiya-content {
-      max-width: 850px;
-      margin: auto;
-    }
-
-    .dandiya-content h2 {
-      font-size: 40px;
-      color: #f5dc8b;
+    .dandiya-inner h2 {
+      color: var(--light-gold);
+      font-size: 38px;
       margin-bottom: 15px;
     }
 
-    .dandiya-content p {
-      font-size: 18px;
+    .dandiya-inner p {
+      font-size: 17px;
+      margin-bottom: 25px;
     }
 
     /* GALLERY */
+
     .gallery {
-      background: #fff3d6;
+      background: var(--white);
     }
 
     .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
     }
 
-    .gallery-grid img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
+    .gallery-item {
+      height: 210px;
+      overflow: hidden;
       border-radius: 12px;
-      transition: 0.3s;
     }
 
-    .gallery-grid img:hover {
-      transform: scale(1.03);
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.08);
     }
 
     /* FOUNDER */
+
     .founder {
-      background: #fff;
+      background: #fff3d8;
     }
 
-    .founder-box {
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 50px;
+      align-items: center;
       max-width: 950px;
       margin: auto;
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      background: #fff9ed;
-      padding: 35px;
-      border-radius: 20px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
 
     .founder-photo {
-      width: 240px;
-      height: 280px;
-      object-fit: cover;
-      border-radius: 15px;
-      border: 5px solid #d5a52c;
+      background: var(--white);
+      padding: 12px;
+      border-radius: 18px;
+      box-shadow: 0 12px 30px rgba(67,13,31,0.15);
     }
 
-    .founder-info h2 {
-      color: #71152f;
-      font-size: 31px;
+    .founder-photo img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .founder-text h2 {
+      color: var(--maroon);
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .founder-text h3 {
+      color: var(--orange);
+      font-size: 24px;
+      margin-bottom: 18px;
+    }
+
+    .founder-text p {
+      color: #5d5052;
       margin-bottom: 15px;
     }
 
-    .founder-info p {
-      font-size: 17px;
-    }
-
     /* WHY AURA */
-    .why-aura {
-      background: #fff3d6;
+
+    .why {
+      background: var(--white);
     }
 
     .why-grid {
@@ -380,139 +567,199 @@
     }
 
     .why-card {
-      background: white;
-      padding: 25px;
       text-align: center;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      padding: 30px 18px;
+      border-radius: 14px;
+      background: var(--cream);
+      border: 1px solid #f0e1c3;
+    }
+
+    .why-icon {
+      width: 58px;
+      height: 58px;
+      margin: 0 auto 15px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--maroon);
+      color: var(--light-gold);
+      border-radius: 50%;
+      font-size: 25px;
+      font-weight: bold;
     }
 
     .why-card h3 {
-      color: #71152f;
-      margin-bottom: 10px;
+      color: var(--maroon);
+      margin-bottom: 8px;
+    }
+
+    .why-card p {
+      color: #675b5d;
+      font-size: 14px;
     }
 
     /* ENQUIRY */
+
     .enquiry {
-      background: #fff;
+      background: var(--cream);
     }
 
-    .form-box {
+    .enquiry-box {
       max-width: 850px;
       margin: auto;
-      background: #fff9ed;
+      background: var(--white);
       padding: 35px;
-      border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: 0 10px 28px rgba(67,13,31,0.10);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
     }
 
     .form-group {
-      margin-bottom: 18px;
+      display: flex;
+      flex-direction: column;
     }
 
-    .form-group label {
-      display: block;
+    .form-group.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
       font-weight: bold;
-      margin-bottom: 7px;
-      color: #4a3029;
+      color: var(--maroon);
+      margin-bottom: 6px;
     }
 
-    .form-group input,
-    .form-group select,
-    .form-group textarea {
+    input,
+    textarea,
+    select {
       width: 100%;
       padding: 13px;
-      border: 1px solid #d7c6a5;
+      border: 1px solid #d8cbb9;
       border-radius: 8px;
-      font-size: 15px;
-      background: white;
+      font: inherit;
+      outline: none;
+      background: #fffdfa;
     }
 
-    .form-group textarea {
-      min-height: 120px;
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: var(--gold);
+      box-shadow: 0 0 0 2px rgba(213,165,44,0.15);
+    }
+
+    textarea {
+      min-height: 130px;
       resize: vertical;
     }
 
-    .submit-btn {
-      border: none;
-      background: #71152f;
-      color: white;
-      padding: 14px 30px;
-      border-radius: 30px;
-      font-size: 16px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .submit-btn:hover {
-      background: #430d1f;
+    .form-submit {
+      margin-top: 20px;
+      text-align: center;
     }
 
     /* CONTACT */
+
     .contact {
-      background: #71152f;
-      color: white;
+      background:
+        linear-gradient(
+          135deg,
+          var(--maroon),
+          var(--dark-maroon)
+        );
+      color: var(--white);
     }
 
     .contact .section-title h2 {
-      color: #f5dc8b;
+      color: var(--light-gold);
     }
 
     .contact .section-title p {
-      color: #f9eac5;
+      color: #f3e5d2;
     }
 
     .contact-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
     }
 
     .contact-card {
       background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(245,220,139,0.25);
       padding: 25px;
-      border-radius: 15px;
+      border-radius: 13px;
     }
 
     .contact-card h3 {
-      color: #f5dc8b;
-      margin-bottom: 12px;
+      color: var(--light-gold);
+      margin-bottom: 8px;
     }
 
     .contact-card p {
-      color: #fff;
+      color: #fff4e6;
     }
 
-    .quick-buttons {
-      text-align: center;
-      margin-top: 35px;
-    }
-
-    .quick-buttons a {
-      display: inline-block;
-      margin: 5px;
-      padding: 12px 22px;
-      border-radius: 25px;
-      background: #d5a52c;
-      color: #430d1f;
-      font-weight: bold;
+    .contact-actions {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
     }
 
     /* FOOTER */
+
     footer {
-      background: #430d1f;
-      color: white;
+      background: #260914;
+      color: #eadbd2;
       text-align: center;
-      padding: 22px 15px;
+      padding: 25px 20px;
     }
 
-    footer p {
-      margin: 4px 0;
+    footer strong {
+      color: var(--light-gold);
     }
 
     /* RESPONSIVE */
+
     @media (max-width: 900px) {
-      .service-grid {
+
+      .menu-btn {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 78px;
+        background: var(--dark-maroon);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 44px;
+      }
+
+      .services-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
@@ -524,52 +771,42 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .contact-grid {
+      .about-grid,
+      .founder-grid {
         grid-template-columns: 1fr;
       }
 
-      .founder-box {
-        flex-direction: column;
-        text-align: center;
-      }
-
-      nav ul {
-        display: none;
-        position: absolute;
-        top: 82px;
-        left: 0;
-        width: 100%;
-        background: #71152f;
-        flex-direction: column;
-        padding: 20px;
-        gap: 15px;
-      }
-
-      nav ul.active {
-        display: flex;
-      }
-
-      .menu-btn {
-        display: block;
+      .founder-photo {
+        max-width: 350px;
+        margin: auto;
       }
     }
 
     @media (max-width: 600px) {
-      .brand-name {
+
+      section {
+        padding: 55px 15px;
+      }
+
+      .brand {
         font-size: 19px;
       }
 
-      .logo-area img {
-        width: 48px;
-        height: 48px;
+      .brand img {
+        width: 44px;
+        height: 44px;
+      }
+
+      .hero {
+        min-height: 580px;
       }
 
       .hero h1 {
-        font-size: 38px;
+        font-size: 36px;
       }
 
       .hero h2 {
-        font-size: 23px;
+        font-size: 22px;
       }
 
       .hero p {
@@ -577,111 +814,164 @@
       }
 
       .section-title h2 {
-        font-size: 30px;
+        font-size: 28px;
       }
 
-      .service-grid,
+      .services-grid,
       .gallery-grid,
-      .why-grid {
+      .why-grid,
+      .contact-grid,
+      .form-grid {
         grid-template-columns: 1fr;
       }
 
-      .founder-photo {
-        width: 200px;
-        height: 240px;
+      .form-group.full {
+        grid-column: auto;
       }
 
-      .form-box {
-        padding: 22px;
+      .event-top h3 {
+        font-size: 30px;
       }
 
-      .upcoming-card {
-        padding: 25px;
+      .founder-text h2 {
+        font-size: 29px;
       }
 
-      .upcoming-card h3 {
-        font-size: 26px;
+      .dandiya-inner h2 {
+        font-size: 30px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
   <!-- HEADER -->
+
   <header>
-    <div class="navbar">
+    <nav class="navbar">
 
-      <div class="logo-area">
+      <a href="#home" class="brand">
         <img src="aura-logo.png" alt="AuraEvents Logo">
-        <div class="brand-name">AuraEvents</div>
-      </div>
+        <span>AuraEvents</span>
+      </a>
 
-      <div class="menu-btn" onclick="toggleMenu()">☰</div>
+      <button class="menu-btn" onclick="toggleMenu()" aria-label="Menu">
+        ☰
+      </button>
 
-      <nav>
-        <ul id="navMenu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#upcoming">Upcoming Events</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#gallery">Gallery</a></li>
-          <li><a href="#founder">Founder</a></li>
-          <li><a href="#enquiry">Enquiry</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#upcoming">Upcoming Events</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#founder">Founder</a></li>
+        <li><a href="#enquiry">Enquiry</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
 
-    </div>
+    </nav>
   </header>
 
 
   <!-- HERO -->
-  <section class="hero" id="home">
-    <div class="hero-content">
 
-      <img
-        src="aura-logo.png"
-        alt="AuraEvents"
-        class="hero-logo"
-      >
+  <section class="hero" id="home">
+
+    <div class="hero-content">
 
       <h1>AuraEvents</h1>
 
-      <h2>Events, Exhibitions & Celebrations</h2>
+      <h2>Events • Exhibitions • Celebrations</h2>
 
       <p>
-        Bringing people together through beautiful events,
-        exhibitions, cultural celebrations and memorable experiences.
+        Dandiya Nights, exhibitions, concerts, corporate events,
+        birthday celebrations and memorable experiences —
+        सबके लिए एक शानदार आयोजन।
       </p>
 
-      <a href="#enquiry" class="hero-btn">
-        Plan Your Event
-      </a>
+      <div class="hero-buttons">
+        <a href="#upcoming" class="btn btn-gold">
+          Upcoming Events
+        </a>
+
+        <a href="#enquiry" class="btn btn-outline">
+          Enquire Now
+        </a>
+      </div>
 
     </div>
+
   </section>
 
 
   <!-- ABOUT -->
+
   <section class="about" id="about">
 
     <div class="container">
 
       <div class="section-title">
         <h2>About AuraEvents</h2>
-        <p>Creating memorable experiences with passion and creativity.</p>
+        <p>
+          हर तरह के आयोजन को सरल, सुंदर और यादगार बनाने की हमारी कोशिश।
+        </p>
+        <div class="gold-line"></div>
       </div>
 
-      <div class="about-content">
+      <div class="about-grid">
 
-        <p>
-          AuraEvents is dedicated to creating meaningful and memorable
-          events, exhibitions and celebrations. From traditional cultural
-          programs to modern exhibitions, corporate events and family
-          celebrations, we focus on making every occasion special,
-          well-organised and enjoyable for everyone.
-        </p>
+        <div class="about-text">
+
+          <h3>आपका आयोजन, हमारी जिम्मेदारी</h3>
+
+          <p>
+            AuraEvents विभिन्न प्रकार के events और exhibitions
+            आयोजित करने के लिए काम करता है।
+          </p>
+
+          <p>
+            हमारा उद्देश्य ऐसा आयोजन करना है जिसे हर उम्र,
+            हर वर्ग और हर तरह का व्यक्ति आसानी से समझ सके
+            और खुशी के साथ उसका हिस्सा बन सके।
+          </p>
+
+          <p>
+            Dandiya Nights से लेकर exhibitions, concerts,
+            corporate events, birthday parties और special
+            celebrations तक — हम अलग-अलग जरूरतों के अनुसार
+            आयोजन की सुविधा प्रदान करते हैं।
+          </p>
+
+        </div>
+
+        <div class="about-box">
+
+          <h3>हम क्या करते हैं?</h3>
+
+          <p>
+            • Events Planning & Management
+          </p>
+
+          <p>
+            • Exhibitions & Product Shows
+          </p>
+
+          <p>
+            • Cultural & Entertainment Events
+          </p>
+
+          <p>
+            • Corporate & Family Events
+          </p>
+
+          <p>
+            • Special Celebrations
+          </p>
+
+        </div>
 
       </div>
 
@@ -691,26 +981,44 @@
 
 
   <!-- UPCOMING EVENTS -->
-  <section class="upcoming-events" id="upcoming">
+
+  <section class="upcoming" id="upcoming">
 
     <div class="container">
 
       <div class="section-title">
+
         <h2>Upcoming Events</h2>
-        <p>हमारे आने वाले खास कार्यक्रम</p>
-      </div>
-
-      <div class="upcoming-card">
-
-        <h3>Dandiya Night</h3>
 
         <p>
-          आने वाली डांडिया नाइट में संगीत, नृत्य और रंग-बिरंगी
-          पारंपरिक संस्कृति का शानदार अनुभव मिलेगा। परिवार और
-          दोस्तों के साथ गरबा एवं डांडिया की मस्ती, मनोरंजन और
-          उत्सव के खूबसूरत माहौल का आनंद लेने के लिए तैयार हो जाइए।
-          AuraEvents आपके लिए एक यादगार डांडिया नाइट लेकर आ रहा है।
+          आने वाले खास आयोजन की जानकारी
         </p>
+
+        <div class="gold-line"></div>
+
+      </div>
+
+      <div class="event-card">
+
+        <div class="event-top">
+
+          <span>UPCOMING EVENT</span>
+
+          <h3>Dandiya Night</h3>
+
+        </div>
+
+        <div class="event-body">
+
+          <p>
+            आने वाली डांडिया नाइट में संगीत, नृत्य और रंग-बिरंगी
+            पारंपरिक संस्कृति का शानदार अनुभव मिलेगा। परिवार और
+            दोस्तों के साथ गरबा एवं डांडिया की मस्ती, मनोरंजन और
+            उत्सव के खूबसूरत माहौल का आनंद लेने के लिए तैयार हो जाइए।
+            AuraEvents आपके लिए एक यादगार डांडिया नाइट लेकर आ रहा है।
+          </p>
+
+        </div>
 
       </div>
 
@@ -720,230 +1028,271 @@
 
 
   <!-- SERVICES -->
+
   <section class="services" id="services">
 
     <div class="container">
 
       <div class="section-title">
+
         <h2>Our Services</h2>
+
         <p>
-          From traditional celebrations to modern exhibitions,
-          we create events for every occasion.
+          अलग-अलग जरूरतों के लिए अलग-अलग प्रकार के events और exhibitions।
         </p>
+
+        <div class="gold-line"></div>
+
       </div>
 
-      <div class="service-grid">
+
+      <div class="services-grid">
+
 
         <!-- 1 -->
+
         <div class="service-card">
 
           <img
-            src="https://images.unsplash.com/photo-1604881991720-f91add269bed?auto=format&fit=crop&w=900&q=80"
-            alt="Dandiya and Garba Nights"
-          >
+            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=80"
+            alt="Dandiya and Garba Night">
 
           <div class="service-content">
+
             <h3>Dandiya & Garba Nights</h3>
+
             <p>
-              Traditional music, colourful decorations,
-              dance and festive entertainment.
+              संगीत, डांस, गरबा और डांडिया से भरपूर
+              यादगार cultural nights।
             </p>
+
           </div>
 
         </div>
 
 
         <!-- 2 -->
+
         <div class="service-card">
 
           <img
-            src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80"
-            alt="Jewellery Exhibitions"
-          >
+            src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=80"
+            alt="Jewellery Exhibition">
 
           <div class="service-content">
+
             <h3>Jewellery Exhibitions</h3>
+
             <p>
-              Beautiful jewellery exhibitions for brands,
-              designers and customers.
+              Jewellery और lifestyle products के लिए
+              आकर्षक exhibitions।
             </p>
+
           </div>
 
         </div>
 
 
         <!-- 3 -->
+
         <div class="service-card">
 
           <img
             src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=900&q=80"
-            alt="Clothing and Fashion"
-          >
+            alt="Clothing and Fashion Exhibition">
 
           <div class="service-content">
+
             <h3>Clothing & Fashion</h3>
+
             <p>
-              Fashion exhibitions, clothing showcases and
-              shopping experiences.
+              Fashion, clothing और lifestyle brands के लिए
+              exhibitions और showcases।
             </p>
+
           </div>
 
         </div>
 
 
         <!-- 4 -->
+
         <div class="service-card">
 
           <img
-            src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80"
-            alt="Automobile Exhibitions"
-          >
+            src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80"
+            alt="Automobile Exhibition">
 
           <div class="service-content">
+
             <h3>Automobile Exhibitions</h3>
+
             <p>
-              Automobile showcases, launches and promotional
-              exhibitions.
+              Cars, bikes और automobile products के लिए
+              professional exhibitions।
             </p>
+
           </div>
 
         </div>
 
 
         <!-- 5 -->
+
         <div class="service-card">
 
           <img
-            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80"
-            alt="Product and Trade Exhibitions"
-          >
+            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80"
+            alt="Product and Trade Exhibition">
 
           <div class="service-content">
+
             <h3>Product & Trade Exhibitions</h3>
+
             <p>
-              Professional exhibitions for products,
-              businesses and trade promotions.
+              अलग-अलग products और businesses को लोगों तक
+              पहुंचाने के लिए trade exhibitions।
             </p>
+
           </div>
 
         </div>
 
 
         <!-- 6 -->
+
         <div class="service-card">
 
           <img
-            src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=900&q=80"
-            alt="Handloom and Handicrafts"
-          >
+            src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?auto=format&fit=crop&w=900&q=80"
+            alt="Handloom and Handicrafts">
 
           <div class="service-content">
+
             <h3>Handloom & Handicrafts</h3>
+
             <p>
-              Showcasing traditional art, handicrafts,
-              handloom products and local talent.
+              Traditional handloom, handicrafts और local
+              products को showcase करने के अवसर।
             </p>
+
           </div>
 
         </div>
 
 
         <!-- 7 -->
+
         <div class="service-card">
 
           <img
-            src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=900&q=80"
-            alt="Food and Lifestyle Exhibitions"
-          >
+            src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=80"
+            alt="Food and Lifestyle Exhibition">
 
           <div class="service-content">
+
             <h3>Food & Lifestyle Exhibitions</h3>
+
             <p>
-              Food festivals, lifestyle products and
-              exciting public experiences.
+              Food, lifestyle और daily-use products से जुड़े
+              exhibitions और experiences।
             </p>
+
           </div>
 
         </div>
 
 
         <!-- 8 -->
+
         <div class="service-card">
 
           <img
             src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80"
-            alt="Property Exhibitions"
-          >
+            alt="Property Exhibition">
 
           <div class="service-content">
+
             <h3>Property Exhibitions</h3>
+
             <p>
-              Property showcases, real estate exhibitions
-              and customer interaction events.
+              Property और real estate projects के लिए
+              customer-focused exhibitions।
             </p>
+
           </div>
 
         </div>
 
 
         <!-- 9 -->
+
         <div class="service-card">
 
           <img
             src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=900&q=80"
-            alt="Live Concerts"
-          >
+            alt="Live Concert">
 
           <div class="service-content">
+
             <h3>Live Concerts</h3>
+
             <p>
-              Live music, entertainment programs and
-              unforgettable concert experiences.
+              Music, entertainment और live performances के
+              लिए शानदार event experiences।
             </p>
+
           </div>
 
         </div>
 
 
         <!-- 10 -->
+
         <div class="service-card">
 
           <img
-            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=900&q=80"
-            alt="Corporate Events"
-          >
+            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
+            alt="Corporate Event">
 
           <div class="service-content">
+
             <h3>Corporate Events</h3>
+
             <p>
-              Corporate meetings, launches, conferences
-              and professional events.
+              Meetings, corporate celebrations, launches और
+              business events।
             </p>
+
           </div>
 
         </div>
 
 
         <!-- 11 -->
+
         <div class="service-card">
 
           <img
             src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=900&q=80"
-            alt="Birthday and Family Events"
-          >
+            alt="Birthday and Family Event">
 
           <div class="service-content">
+
             <h3>Birthday & Family Events</h3>
+
             <p>
-              Birthdays, anniversaries and family celebrations
-              made memorable.
+              Birthday parties, family functions और
+              छोटे-बड़े private celebrations।
             </p>
+
           </div>
 
         </div>
 
 
-        <!-- 12 -->
+        <!-- 12 - NO PHOTO -->
+
         <div class="service-card">
 
           <div class="service-content festival-card">
@@ -951,14 +1300,14 @@
             <h3>Festivals & Special Celebrations</h3>
 
             <p>
-              Traditional festivals, cultural celebrations
-              and special occasions organised with creativity,
-              warmth and beautiful experiences.
+              Festivals, cultural programs और special occasions
+              के लिए customized celebrations और event management।
             </p>
 
           </div>
 
         </div>
+
 
       </div>
 
@@ -968,21 +1317,21 @@
 
 
   <!-- DANDIYA FEATURE -->
+
   <section class="dandiya-feature">
 
-    <div class="container">
+    <div class="dandiya-inner">
 
-      <div class="dandiya-content">
+      <h2>Dandiya Night with AuraEvents</h2>
 
-        <h2>Dandiya & Garba Nights</h2>
+      <p>
+        संगीत, रंग, डांस और परंपरा को एक साथ जोड़कर
+        एक यादगार festive experience।
+      </p>
 
-        <p>
-          Experience the colours, music, dance and traditions
-          of India with a beautifully organised Dandiya and
-          Garba celebration.
-        </p>
-
-      </div>
+      <a href="#enquiry" class="btn btn-gold">
+        Event Enquiry
+      </a>
 
     </div>
 
@@ -990,48 +1339,73 @@
 
 
   <!-- GALLERY -->
+
   <section class="gallery" id="gallery">
 
     <div class="container">
 
       <div class="section-title">
+
         <h2>Gallery</h2>
+
         <p>
-          A glimpse of events, celebrations and exhibitions.
+          Events, celebrations और exhibitions की झलक।
         </p>
+
+        <div class="gold-line"></div>
+
       </div>
+
 
       <div class="gallery-grid">
 
-        <img
-          src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=900&q=80"
-          alt="Event"
-        >
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80"
+            alt="Event celebration">
+        </div>
 
-        <img
-          src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=900&q=80"
-          alt="Celebration"
-        >
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80"
+            alt="Celebration event">
+        </div>
 
-        <img
-          src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=900&q=80"
-          alt="Concert"
-        >
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=800&q=80"
+            alt="Live event">
+        </div>
 
-        <img
-          src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=900&q=80"
-          alt="Exhibition"
-        >
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1507504031003-b417219a0fde?auto=format&fit=crop&w=800&q=80"
+            alt="Festival event">
+        </div>
 
-        <img
-          src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=900&q=80"
-          alt="Family Celebration"
-        >
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1472653431158-6364773b2a56?auto=format&fit=crop&w=800&q=80"
+            alt="Cultural event">
+        </div>
 
-        <img
-          src="https://images.unsplash.com/photo-1577083552431-6e5fd01aa342?auto=format&fit=crop&w=900&q=80"
-          alt="Handicrafts Exhibition"
-        >
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=800&q=80"
+            alt="Corporate event">
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80"
+            alt="Family celebration">
+        </div>
+
+        <div class="gallery-item">
+          <img
+            src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=800&q=80"
+            alt="Party event">
+        </div>
 
       </div>
 
@@ -1041,35 +1415,52 @@
 
 
   <!-- FOUNDER -->
+
   <section class="founder" id="founder">
 
     <div class="container">
 
       <div class="section-title">
-        <h2>Our Founder</h2>
+
+        <h2>Founder</h2>
+
         <p>
-          The vision behind AuraEvents.
+          AuraEvents के पीछे की सोच और नेतृत्व।
         </p>
+
+        <div class="gold-line"></div>
+
       </div>
 
-      <div class="founder-box">
 
-        <img
-          src="founder.png"
-          alt="Founder - Mrs Aura Bhushan"
-          class="founder-photo"
-        >
+      <div class="founder-grid">
 
-        <div class="founder-info">
+        <div class="founder-photo">
+
+          <img
+            src="founder.png"
+            alt="Founder - Mrs Aura Bhushan">
+
+        </div>
+
+
+        <div class="founder-text">
 
           <h2>Founder - Mrs Aura Bhushan</h2>
 
+          <h3>AuraEvents</h3>
+
           <p>
-            AuraEvents is built with a vision of bringing people
-            together through meaningful events, exhibitions,
-            cultural celebrations and memorable experiences.
-            Every event is planned with care, creativity and
-            attention to detail.
+            AuraEvents का उद्देश्य अलग-अलग प्रकार के events,
+            exhibitions और celebrations को लोगों के लिए
+            आसान, आकर्षक और यादगार बनाना है।
+          </p>
+
+          <p>
+            Cultural events से लेकर exhibitions, concerts,
+            corporate programs और family celebrations तक,
+            हर आयोजन को अपनी जरूरत के अनुसार तैयार करने
+            पर विशेष ध्यान दिया जाता है।
           </p>
 
         </div>
@@ -1082,47 +1473,75 @@
 
 
   <!-- WHY AURA -->
-  <section class="why-aura">
+
+  <section class="why">
 
     <div class="container">
 
       <div class="section-title">
-        <h2>Why AuraEvents</h2>
+
+        <h2>Why AuraEvents?</h2>
+
         <p>
-          Making every event special with thoughtful planning
-          and creative execution.
+          आयोजन को आसान और बेहतर बनाने की हमारी कोशिश।
         </p>
+
+        <div class="gold-line"></div>
+
       </div>
+
 
       <div class="why-grid">
 
         <div class="why-card">
-          <h3>Creative Ideas</h3>
+
+          <div class="why-icon">1</div>
+
+          <h3>Simple Planning</h3>
+
           <p>
-            Unique concepts and attractive event experiences.
+            आपकी जरूरत को समझकर सरल planning।
           </p>
+
         </div>
 
-        <div class="why-card">
-          <h3>Professional Planning</h3>
-          <p>
-            Proper planning and organised event execution.
-          </p>
-        </div>
 
         <div class="why-card">
-          <h3>Memorable Events</h3>
+
+          <div class="why-icon">2</div>
+
+          <h3>Creative Events</h3>
+
           <p>
-            Creating moments that people remember for years.
+            हर आयोजन में creativity और आकर्षण।
           </p>
+
         </div>
 
+
         <div class="why-card">
-          <h3>Customer Focus</h3>
+
+          <div class="why-icon">3</div>
+
+          <h3>Multiple Events</h3>
+
           <p>
-            Understanding your requirements and making
-            your event special.
+            अलग-अलग प्रकार के events और exhibitions।
           </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+          <div class="why-icon">4</div>
+
+          <h3>Personal Attention</h3>
+
+          <p>
+            हर enquiry और आयोजन पर personal attention।
+          </p>
+
         </div>
 
       </div>
@@ -1133,173 +1552,129 @@
 
 
   <!-- ENQUIRY -->
+
   <section class="enquiry" id="enquiry">
 
     <div class="container">
 
       <div class="section-title">
 
-        <h2>Customer Enquiry</h2>
+        <h2>Event Enquiry</h2>
 
         <p>
-          Tell us about your event and we will get in touch
-          with you.
+          अपने event के बारे में हमें बताइए।
         </p>
+
+        <div class="gold-line"></div>
 
       </div>
 
 
-      <div class="form-box">
+      <div class="enquiry-box">
 
         <form onsubmit="sendWhatsApp(event)">
 
-          <div class="form-group">
-
-            <label for="customerName">
-              Your Name
-            </label>
-
-            <input
-              type="text"
-              id="customerName"
-              placeholder="Enter your name"
-              required
-            >
-
-          </div>
+          <div class="form-grid">
 
 
-          <div class="form-group">
+            <div class="form-group">
 
-            <label for="customerMobile">
-              Mobile Number
-            </label>
+              <label for="name">
+                आपका नाम
+              </label>
 
-            <input
-              type="tel"
-              id="customerMobile"
-              placeholder="Enter mobile number"
-              required
-            >
+              <input
+                type="text"
+                id="name"
+                placeholder="अपना नाम लिखें"
+                required>
 
-          </div>
+            </div>
 
 
-          <div class="form-group">
+            <div class="form-group">
 
-            <label for="eventType">
-              Event Type
-            </label>
+              <label for="phone">
+                मोबाइल नंबर
+              </label>
 
-            <select id="eventType" required>
+              <input
+                type="tel"
+                id="phone"
+                placeholder="मोबाइल नंबर"
+                required>
 
-              <option value="">
-                Select Event Type
-              </option>
+            </div>
 
-              <option>
-                Dandiya & Garba Night
-              </option>
 
-              <option>
-                Jewellery Exhibition
-              </option>
+            <div class="form-group">
 
-              <option>
-                Clothing & Fashion Exhibition
-              </option>
+              <label for="event">
+                Event Type
+              </label>
 
-              <option>
-                Automobile Exhibition
-              </option>
+              <select id="event" required>
 
-              <option>
-                Product & Trade Exhibition
-              </option>
+                <option value="">
+                  Event चुनें
+                </option>
 
-              <option>
-                Handloom & Handicrafts
-              </option>
+                <option>Dandiya / Garba Night</option>
+                <option>Jewellery Exhibition</option>
+                <option>Clothing & Fashion Exhibition</option>
+                <option>Automobile Exhibition</option>
+                <option>Product & Trade Exhibition</option>
+                <option>Handloom & Handicrafts</option>
+                <option>Food & Lifestyle Exhibition</option>
+                <option>Property Exhibition</option>
+                <option>Live Concert</option>
+                <option>Corporate Event</option>
+                <option>Birthday / Family Event</option>
+                <option>Festival / Special Celebration</option>
 
-              <option>
-                Food & Lifestyle Exhibition
-              </option>
+              </select>
 
-              <option>
-                Property Exhibition
-              </option>
+            </div>
 
-              <option>
-                Live Concert
-              </option>
 
-              <option>
-                Corporate Event
-              </option>
+            <div class="form-group">
 
-              <option>
-                Birthday & Family Event
-              </option>
+              <label for="city">
+                City
+              </label>
 
-              <option>
-                Festival & Special Celebration
-              </option>
+              <input
+                type="text"
+                id="city"
+                placeholder="शहर">
 
-            </select>
+            </div>
+
+
+            <div class="form-group full">
+
+              <label for="message">
+                आपकी जरूरत / Message
+              </label>
+
+              <textarea
+                id="message"
+                placeholder="अपने event के बारे में बताइए"></textarea>
+
+            </div>
 
           </div>
 
 
-          <div class="form-group">
+          <div class="form-submit">
 
-            <label for="eventDate">
-              Event Date
-            </label>
-
-            <input
-              type="date"
-              id="eventDate"
-              required
-            >
+            <button
+              type="submit"
+              class="btn btn-gold">
+              WhatsApp पर Enquiry भेजें
+            </button>
 
           </div>
-
-
-          <div class="form-group">
-
-            <label for="guestCount">
-              Approximate Number of Guests
-            </label>
-
-            <input
-              type="number"
-              id="guestCount"
-              placeholder="Example: 500"
-            >
-
-          </div>
-
-
-          <div class="form-group">
-
-            <label for="eventDetails">
-              Event Details
-            </label>
-
-            <textarea
-              id="eventDetails"
-              placeholder="Tell us about your event..."
-            ></textarea>
-
-          </div>
-
-
-          <button
-            type="submit"
-            class="submit-btn"
-          >
-            Send Enquiry on WhatsApp
-          </button>
 
         </form>
 
@@ -1311,24 +1686,27 @@
 
 
   <!-- CONTACT -->
+
   <section class="contact" id="contact">
 
     <div class="container">
 
       <div class="section-title">
 
-        <h2>Contact Us</h2>
+        <h2>Contact AuraEvents</h2>
 
         <p>
-          We would love to hear from you.
+          किसी भी event या exhibition के लिए हमसे संपर्क करें।
         </p>
+
+        <div class="gold-line"></div>
 
       </div>
 
 
       <div class="contact-grid">
 
-        <!-- HEAD OFFICE -->
+
         <div class="contact-card">
 
           <h3>Head Office</h3>
@@ -1342,7 +1720,6 @@
         </div>
 
 
-        <!-- BRANCH OFFICE -->
         <div class="contact-card">
 
           <h3>Branch Office</h3>
@@ -1356,37 +1733,73 @@
         </div>
 
 
-        <!-- CONTACT -->
         <div class="contact-card">
 
-          <h3>Contact</h3>
+          <h3>Calling Number</h3>
 
           <p>
-            Calling Number: +91-9471740169<br>
-            WhatsApp Number: +91-9471740169<br>
-            Email Id: aurae198331@gmail.com
+            +91-9471740169
           </p>
 
         </div>
 
+
+        <div class="contact-card">
+
+          <h3>WhatsApp Number</h3>
+
+          <p>
+            +91-9471740169
+          </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+          <h3>Email Id</h3>
+
+          <p>
+            aurae198331@gmail.com
+          </p>
+
+        </div>
+
+
+        <div class="contact-card">
+
+          <h3>Business</h3>
+
+          <p>
+            Events • Exhibitions • Celebrations
+          </p>
+
+        </div>
+
+
       </div>
 
 
-      <div class="quick-buttons">
+      <div class="contact-actions">
 
-        <a href="tel:+919471740169">
-          Call Us
+        <a
+          href="tel:+919471740169"
+          class="btn btn-gold">
+          Call Now
         </a>
 
         <a
           href="https://wa.me/919471740169"
           target="_blank"
-        >
+          rel="noopener"
+          class="btn btn-outline">
           WhatsApp
         </a>
 
-        <a href="mailto:aurae198331@gmail.com">
-          Email Us
+        <a
+          href="mailto:aurae198331@gmail.com"
+          class="btn btn-outline">
+          Email
         </a>
 
       </div>
@@ -1397,10 +1810,13 @@
 
 
   <!-- FOOTER -->
+
   <footer>
 
     <p>
-      © <span id="year"></span> AuraEvents. All Rights Reserved.
+      © <span id="year"></span>
+      <strong>AuraEvents</strong>.
+      All Rights Reserved.
     </p>
 
     <p>
@@ -1410,74 +1826,70 @@
   </footer>
 
 
-  <script>
+  <!-- JAVASCRIPT -->
 
-    /* MOBILE MENU */
+  <script>
 
     function toggleMenu() {
 
-      const menu = document.getElementById("navMenu");
+      const nav = document.getElementById("navLinks");
 
-      menu.classList.toggle("active");
+      nav.classList.toggle("active");
 
     }
 
 
-    /* WHATSAPP ENQUIRY */
+    document.querySelectorAll(".nav-links a").forEach(function(link) {
+
+      link.addEventListener("click", function() {
+
+        document.getElementById("navLinks").classList.remove("active");
+
+      });
+
+    });
+
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
 
     function sendWhatsApp(event) {
 
       event.preventDefault();
 
       const name =
-        document.getElementById("customerName").value;
+        document.getElementById("name").value.trim();
 
-      const mobile =
-        document.getElementById("customerMobile").value;
+      const phone =
+        document.getElementById("phone").value.trim();
 
       const eventType =
-        document.getElementById("eventType").value;
+        document.getElementById("event").value;
 
-      const eventDate =
-        document.getElementById("eventDate").value;
-
-      const guestCount =
-        document.getElementById("guestCount").value;
-
-      const eventDetails =
-        document.getElementById("eventDetails").value;
-
+      const city =
+        document.getElementById("city").value.trim();
 
       const message =
-        "Hello AuraEvents,%0A%0A" +
-        "Customer Enquiry%0A%0A" +
+        document.getElementById("message").value.trim();
+
+
+      const whatsappMessage =
+        "AuraEvents Event Enquiry%0A%0A" +
         "Name: " + encodeURIComponent(name) + "%0A" +
-        "Mobile: " + encodeURIComponent(mobile) + "%0A" +
-        "Event Type: " + encodeURIComponent(eventType) + "%0A" +
-        "Event Date: " + encodeURIComponent(eventDate) + "%0A" +
-        "Guests: " + encodeURIComponent(guestCount) + "%0A" +
-        "Event Details: " + encodeURIComponent(eventDetails);
+        "Mobile: " + encodeURIComponent(phone) + "%0A" +
+        "Event: " + encodeURIComponent(eventType) + "%0A" +
+        "City: " + encodeURIComponent(city) + "%0A" +
+        "Message: " + encodeURIComponent(message);
 
 
-      const whatsappNumber = "919471740169";
-
-      const whatsappURL =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        message;
-
-
-      window.open(whatsappURL, "_blank");
+      window.open(
+        "https://wa.me/919471740169?text=" +
+        whatsappMessage,
+        "_blank"
+      );
 
     }
-
-
-    /* CURRENT YEAR */
-
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
-
 
   </script>
 
