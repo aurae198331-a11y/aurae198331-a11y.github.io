@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aura Events & Exhibitions | Events, Exhibitions & Celebrations</title>
+<title>AuraEvents | Events, Exhibitions & Celebrations</title>
 <meta name="description" content="Aura Events & Exhibitions - Dandiya Nights, jewellery, fashion, automobile and product exhibitions, concerts, corporate events, birthdays, cultural events and complete event management.">
 <meta name="keywords" content="Aura Events, Aura Events and Exhibitions, Dandiya Night, Exhibition, Event Management, Concert, Corporate Event, Birthday Event, Cultural Event, Bokaro, Dhanbad, Jharkhand">
 <meta name="author" content="Mrs Aura Bhushan - Aura Events & Exhibitions">
@@ -209,6 +209,8 @@ nav a:hover{color:var(--gold2)}
 
 /* SECTIONS */
 section{padding:90px 0}
+.company-details{background:linear-gradient(135deg,#fffaf0,#fff 55%,#fff5df);}
+
 .section-heading{
   text-align:center;
   max-width:760px;
@@ -288,16 +290,41 @@ section{padding:90px 0}
 }
 .detail-card h3{color:var(--maroon);margin-bottom:8px}
 .detail-card p{font-size:14px;color:var(--muted)}
+.founder-card{text-align:center}
+.founder-name-row{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:14px;
+  margin:10px 0 8px;
+}
 .founder-photo-wrap{
-  width:150px;height:150px;margin:0 auto 18px;
-  border-radius:50%;overflow:hidden;
-  border:4px solid var(--gold);
-  box-shadow:0 8px 25px rgba(50,20,25,.16);
+  width:82px;
+  height:82px;
+  flex:0 0 82px;
+  border-radius:50%;
+  overflow:hidden;
+  border:3px solid var(--gold);
+  box-shadow:0 6px 18px rgba(50,20,25,.16);
   background:#f7efe0;
 }
-.founder-photo-wrap img{width:100%;height:100%;object-fit:cover}
-.founder-card{text-align:center}
+.founder-photo-wrap img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+.founder-name{
+  color:var(--maroon);
+  font-size:20px;
+  line-height:1.3;
+}
 .founder-card .detail-icon{margin:0 auto 12px}
+@media(max-width:700px){
+  .founder-name-row{gap:10px}
+  .founder-photo-wrap{width:70px;height:70px;flex-basis:70px}
+  .founder-name{font-size:18px}
+}
 .founding-date{
   display:inline-block;margin-top:10px;padding:7px 12px;
   border-radius:20px;background:#fff4cf;color:#7a5810;
@@ -499,9 +526,9 @@ footer p,footer a{color:#cbbabd;font-size:14px}
   <div class="container navbar">
 
     <a href="#home" class="logo-area">
-      <img class="logo-image" src="aura-logo.png" alt="Aura Events & Exhibitions Logo">
+      <img class="logo-image" src="aura-logo.png" alt="AuraEvents Logo">
       <div class="logo-text">
-        <h1>Aura Events & Exhibitions</h1>
+        <h1>AuraEvents</h1>
         <span>EVENTS • EXHIBITIONS • EXPERIENCES</span>
       </div>
     </a>
@@ -587,49 +614,7 @@ footer p,footer a{color:#cbbabd;font-size:14px}
   </div>
 </section>
 
-<section class="company-details">
-  <div class="container">
-    <div class="section-heading">
-      <div class="small" data-i18n="detailsSmall">COMPANY DETAILS</div>
-      <h2 data-i18n="detailsTitle">Meet Aura Events & Exhibitions</h2>
-      <p data-i18n="detailsText">Our founder and office locations.</p>
-    </div>
 
-    <div class="details-grid">
-
-      <div class="detail-card founder-card">
-        <div class="founder-photo-wrap">
-          <img src="founder-photo.jpg" alt="Mrs Aura Bhushan - Founder" loading="lazy">
-        </div>
-        <div class="detail-icon">★</div>
-        <h3 data-i18n="founderTitle">Founder</h3>
-        <p><strong>Mrs Aura Bhushan</strong></p>
-        <p data-i18n="founderText">Founder, Aura Events & Exhibitions</p>
-        <span class="founding-date" data-i18n="foundingDate">Founded: 11 October 2023</span>
-      </div>
-
-      <div class="detail-card">
-        <div class="detail-icon">◷</div>
-        <h3 data-i18n="foundingDateTitle">Founding Date</h3>
-        <p><strong>11 October 2023</strong></p>
-        <p data-i18n="foundingDateText">The journey of Aura Events & Exhibitions began on this date.</p>
-      </div>
-
-      <div class="detail-card">
-        <div class="detail-icon">⌂</div>
-        <h3 data-i18n="headOfficeTitle">Head Office</h3>
-        <p>H 61, Sector 4, City Centre,<br>Bokaro Steel City, Jharkhand – 827004</p>
-      </div>
-
-      <div class="detail-card">
-        <div class="detail-icon">◆</div>
-        <h3 data-i18n="branchOfficeTitle">Branch Office</h3>
-        <p>Dhaiya, Dhanbad,<br>Jharkhand – 826004</p>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 <section class="services" id="services">
   <div class="container">
@@ -877,31 +862,6 @@ footer p,footer a{color:#cbbabd;font-size:14px}
           </div>
         </div>
 
-        <div class="address-box">
-          <div class="contact-item">
-            <div class="contact-icon">⌂</div>
-            <div>
-              <strong data-i18n="headOfficeTitle">Head Office</strong>
-              <span>H 61, Sector 4, City Centre,<br>Bokaro Steel City, Jharkhand – 827004</span>
-            </div>
-          </div>
-
-          <div class="contact-item">
-            <div class="contact-icon">◆</div>
-            <div>
-              <strong data-i18n="branchOfficeTitle">Branch Office</strong>
-              <span>Dhaiya, Dhanbad,<br>Jharkhand – 826004</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact-item">
-          <div class="contact-icon">★</div>
-          <div>
-            <strong data-i18n="founderTitle">Founder</strong>
-            <span>Mrs Aura Bhushan</span>
-          </div>
-        </div>
 
         <div class="contact-buttons">
           <a href="tel:+919471740169" class="btn btn-primary" data-i18n="callBtn">Call Now</a>
@@ -958,14 +918,60 @@ footer p,footer a{color:#cbbabd;font-size:14px}
   </div>
 </section>
 
+<section class="company-details" id="company-details">
+  <div class="container">
+    <div class="section-heading">
+      <div class="small" data-i18n="detailsSmall">COMPANY DETAILS</div>
+      <h2 data-i18n="detailsTitle">Meet Aura Events & Exhibitions</h2>
+      <p data-i18n="detailsText">Our founder and office locations.</p>
+    </div>
+
+    <div class="details-grid">
+
+      <div class="detail-card founder-card">
+        <div class="detail-icon">★</div>
+        <h3 data-i18n="founderTitle">Founder</h3>
+        <div class="founder-name-row">
+          <div class="founder-photo-wrap">
+            <img src="founder-photo.png"\1>
+          </div>
+          <div class="founder-name"><strong>Mrs Aura Bhushan</strong></div>
+        </div>
+        <p data-i18n="founderText">Founder, Aura Events & Exhibitions</p>
+        <span class="founding-date" data-i18n="foundingDate">Founded: 11 October 2023</span>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-icon">◷</div>
+        <h3 data-i18n="foundingDateTitle">Founding Date</h3>
+        <p><strong>11 October 2023</strong></p>
+        <p data-i18n="foundingDateText">The journey of Aura Events & Exhibitions began on this date.</p>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-icon">⌂</div>
+        <h3 data-i18n="headOfficeTitle">Head Office</h3>
+        <p>H 61, Sector 4, City Centre,<br>Bokaro Steel City, Jharkhand – 827004</p>
+      </div>
+
+      <div class="detail-card">
+        <div class="detail-icon">◆</div>
+        <h3 data-i18n="branchOfficeTitle">Branch Office</h3>
+        <p>Dhaiya, Dhanbad,<br>Jharkhand – 826004</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <footer>
   <div class="container">
     <div class="footer-grid">
 
       <div>
-        <h3>Aura Events & Exhibitions</h3>
+        <h3>AuraEvents</h3>
         <p data-i18n="footerText">Creating events, exhibitions and celebrations that people remember.</p>
-        <p style="margin-top:12px;color:#d9ad3b">Founder: Mrs Aura Bhushan</p>
+        <p style="margin-top:12px;color:#d9ad3b">Founder: Mrs Aura Bhushan | Founded: 11 October 2023</p>
       </div>
 
       <div>
@@ -976,6 +982,7 @@ footer p,footer a{color:#cbbabd;font-size:14px}
           <a href="#services" data-i18n="navServices">Services</a>
           <a href="#gallery" data-i18n="navGallery">Gallery</a>
           <a href="#contact" data-i18n="navContact">Contact</a>
+          <a href="#company-details" data-i18n="navCompanyDetails">Company Details</a>
         </div>
       </div>
 
@@ -985,15 +992,13 @@ footer p,footer a{color:#cbbabd;font-size:14px}
           <a href="tel:+919471740169">+91 94717 40169</a>
           <a href="mailto:aurae198331@gmail.com">aurae198331@gmail.com</a>
           <a href="https://wa.me/919471740169" target="_blank">WhatsApp</a>
-          <span>Head Office: Bokaro Steel City, Jharkhand – 827004</span>
-          <span>Branch Office: Dhaiya, Dhanbad, Jharkhand – 826004</span>
         </div>
       </div>
 
     </div>
 
     <div class="copyright">
-      © <span id="year"></span> Aura Events & Exhibitions.
+      © <span id="year"></span> AuraEvents.
       <span data-i18n="rights">All Rights Reserved.</span>
     </div>
   </div>
@@ -1014,7 +1019,7 @@ function toggleMenu(){
 const translations = {
 en:{
   topTag:"Creating memorable experiences across India",
-  navHome:"Home",navAbout:"About",navServices:"Services",navGallery:"Gallery",navContact:"Contact",
+  navHome:"Home",navAbout:"About",navServices:"Services",navGallery:"Gallery",navContact:"Contact",navCompanyDetails:"Company Details",
   heroBadge:"EVENTS • EXHIBITIONS • CELEBRATIONS",
   heroTitle:"We create <span>experiences</span> people remember.",
   heroText:"From grand Dandiya Nights and exhibitions to concerts, corporate events, birthdays and cultural celebrations — Aura Events & Exhibitions brings every idea to life.",
@@ -1024,7 +1029,7 @@ en:{
   aboutP1:"Aura Events & Exhibitions is an event and exhibition company dedicated to creating beautiful, engaging and memorable experiences.",
   aboutP2:"Whether it is a traditional Indian celebration, a product exhibition, a corporate gathering, a concert or a private celebration, we manage the event with creativity, planning and attention to detail.",
   point1:"Complete Event Planning",point2:"Creative Concepts",point3:"Exhibition Management",point4:"Professional Execution",point5:"Indian Cultural Touch",point6:"End-to-End Support",
-  detailsSmall:"COMPANY DETAILS",detailsTitle:"Meet Aura Events & Exhibitions",detailsText:"Our founder and office locations.",
+  detailsSmall:"COMPANY DETAILS",detailsTitle:"Meet Aura Events & Exhibitions",detailsText:"Founder, founding date and complete office details of Aura Events & Exhibitions.",
   founderTitle:"Founder",founderText:"Founder, Aura Events & Exhibitions",foundingDate:"Founded: 11 October 2023",foundingDateTitle:"Founding Date",foundingDateText:"The journey of Aura Events & Exhibitions began on this date.",headOfficeTitle:"Head Office",branchOfficeTitle:"Branch Office",
   servicesSmall:"WHAT WE DO",servicesTitle:"Events & Exhibitions for Every Occasion",servicesText:"From small celebrations to large public events, we bring planning, creativity and execution together.",
   s1Title:"Dandiya Nights",s1Text:"Traditional Indian festive nights with music, dance, lights, décor and complete event management.",
@@ -1054,7 +1059,7 @@ en:{
 },
 hi:{
   topTag:"पूरे भारत में यादगार अनुभव बनाने की कोशिश",
-  navHome:"होम",navAbout:"हमारे बारे में",navServices:"सेवाएँ",navGallery:"गैलरी",navContact:"संपर्क",
+  navHome:"होम",navAbout:"हमारे बारे में",navServices:"सेवाएँ",navGallery:"गैलरी",navContact:"संपर्क",navCompanyDetails:"कंपनी की जानकारी",
   heroBadge:"इवेंट्स • प्रदर्शनियाँ • समारोह",
   heroTitle:"हम ऐसे <span>अनुभव</span> बनाते हैं जिन्हें लोग याद रखें।",
   heroText:"भव्य डांडिया नाइट और प्रदर्शनियों से लेकर कॉन्सर्ट, कॉर्पोरेट इवेंट, जन्मदिन और सांस्कृतिक कार्यक्रमों तक — Aura Events & Exhibitions आपके हर आइडिया को यादगार बनाने का प्रयास करता है।",
@@ -1063,7 +1068,7 @@ hi:{
   aboutP1:"Aura Events & Exhibitions एक इवेंट और एग्ज़िबिशन कंपनी है जो खूबसूरत, आकर्षक और यादगार अनुभव बनाने के लिए काम करती है।",
   aboutP2:"चाहे पारंपरिक भारतीय समारोह हो, प्रोडक्ट प्रदर्शनी हो, कॉर्पोरेट कार्यक्रम हो, कॉन्सर्ट हो या निजी समारोह — हम प्लानिंग, क्रिएटिविटी और हर छोटी-बड़ी जरूरत पर ध्यान देकर कार्यक्रम को तैयार करते हैं।",
   point1:"पूरी इवेंट प्लानिंग",point2:"क्रिएटिव कॉन्सेप्ट",point3:"एग्ज़िबिशन मैनेजमेंट",point4:"प्रोफेशनल आयोजन",point5:"भारतीय संस्कृति का स्पर्श",point6:"शुरू से अंत तक सहयोग",
-  detailsSmall:"कंपनी की जानकारी",detailsTitle:"Aura Events & Exhibitions",detailsText:"हमारे संस्थापक और कार्यालय की जानकारी।",
+  detailsSmall:"कंपनी की जानकारी",detailsTitle:"Aura Events & Exhibitions",detailsText:"हमारे संस्थापक, स्थापना की तारीख और दोनों कार्यालयों की पूरी जानकारी।",
   founderTitle:"संस्थापक",founderText:"Aura Events & Exhibitions की संस्थापक",foundingDate:"स्थापना: 11 अक्टूबर 2023",foundingDateTitle:"स्थापना की तारीख",foundingDateText:"Aura Events & Exhibitions की यात्रा इसी तारीख से शुरू हुई।",headOfficeTitle:"मुख्य कार्यालय",branchOfficeTitle:"शाखा कार्यालय",
   servicesSmall:"हम क्या करते हैं",servicesTitle:"हर अवसर के लिए इवेंट्स और प्रदर्शनियाँ",servicesText:"छोटे समारोह से लेकर बड़े सार्वजनिक कार्यक्रमों तक — प्लानिंग, क्रिएटिविटी और आयोजन को एक साथ लेकर चलते हैं।",
   s1Title:"डांडिया नाइट",s1Text:"संगीत, डांस, लाइट्स, सजावट और पूरी इवेंट मैनेजमेंट के साथ पारंपरिक भारतीय उत्सव।",
