@@ -378,64 +378,134 @@
       color: #54484b;
     }
 
-    /* SERVICES */
 
+    /* SERVICES - CATEGORY BASED */
     .services {
       background: var(--cream);
     }
 
     .services-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
     }
 
-    .service-card {
+    .service-category {
       background: var(--white);
-      border-radius: 14px;
+      border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 7px 22px rgba(67,13,31,0.10);
-      transition: 0.3s;
+      box-shadow: 0 8px 24px rgba(67,13,31,0.10);
       border: 1px solid #f0e4cf;
+      transition: 0.3s;
     }
 
-    .service-card:hover {
-      transform: translateY(-7px);
-      box-shadow: 0 15px 30px rgba(67,13,31,0.16);
+    .service-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 32px rgba(67,13,31,0.15);
     }
 
-    .service-card img {
+    .service-category-image {
+      position: relative;
+      height: 220px;
+      overflow: hidden;
+    }
+
+    .service-category-image img {
       width: 100%;
-      height: 190px;
+      height: 100%;
       object-fit: cover;
+      transition: 0.4s;
     }
 
-    .service-content {
-      padding: 22px;
+    .service-category:hover .service-category-image img {
+      transform: scale(1.05);
     }
 
-    .service-content h3 {
+    .service-category-label {
+      position: absolute;
+      left: 16px;
+      bottom: 16px;
+      background: rgba(67,13,31,0.92);
+      color: var(--light-gold);
+      padding: 8px 15px;
+      border-radius: 22px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    .service-category-content {
+      padding: 24px;
+    }
+
+    .service-category-content h3 {
       color: var(--maroon);
-      margin-bottom: 9px;
-      font-size: 21px;
+      font-size: 24px;
+      margin-bottom: 8px;
     }
 
-    .service-content p {
+    .service-category-content > p {
       color: #64585a;
+      margin-bottom: 16px;
       font-size: 15px;
     }
 
-    .festival-card {
-      min-height: 238px;
+    .service-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 9px 12px;
+    }
+
+    .service-list li {
+      position: relative;
+      padding: 9px 10px 9px 28px;
+      background: #fff9ed;
+      border: 1px solid #f0e4cf;
+      border-radius: 8px;
+      color: #4f4446;
+      font-size: 14px;
+    }
+
+    .service-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 9px;
+      color: var(--orange);
+      font-weight: bold;
+    }
+
+    .service-category.no-photo .service-category-content {
+      min-height: 220px;
       display: flex;
       flex-direction: column;
       justify-content: center;
-      background:
-        linear-gradient(
-          135deg,
-          #fff8e6,
-          #fff1ce
-        );
+      background: linear-gradient(135deg, #fff8e6, #fff1ce);
+    }
+
+    .service-category.no-photo {
+      border-color: #efdba9;
+    }
+
+    @media (max-width: 900px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .service-list {
+        grid-template-columns: 1fr;
+      }
+
+      .service-category-image {
+        height: 190px;
+      }
+
+      .service-category-content h3 {
+        font-size: 21px;
+      }
     }
 
     /* DANDIYA FEATURE */
@@ -1026,250 +1096,198 @@
       </div>
 
 
+
       <div class="services-grid">
 
-
-        <div class="service-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=900&q=80"
-            alt="Dandiya and Garba Night">
-
-          <div class="service-content">
-
-            <h3>Dandiya & Garba Nights</h3>
-
-            <p>
-              Music, dance, Garba and Dandiya events filled with
-              entertainment and celebration.
-            </p>
-
+        <!-- 1. FAMILY & SOCIAL EVENTS -->
+        <div class="service-category">
+          <div class="service-category-image">
+            <img
+              src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1000&q=85"
+              alt="Indian family celebration and social event">
+            <div class="service-category-label">Family & Social</div>
           </div>
-
+          <div class="service-category-content">
+            <h3>Family & Social Events</h3>
+            <p>Khushi, milan aur special occasions ke liye family aur social events.</p>
+            <ul class="service-list">
+              <li>Birthday Parties</li>
+              <li>Anniversary Celebrations</li>
+              <li>Family Reunions</li>
+              <li>Family Get-Togethers</li>
+              <li>Kitty Parties</li>
+              <li>Engagement Functions</li>
+              <li>Private Parties</li>
+              <li>Special Family Events</li>
+            </ul>
+          </div>
         </div>
 
-
-        <div class="service-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=80"
-            alt="Jewellery Exhibition">
-
-          <div class="service-content">
-
-            <h3>Jewellery Exhibitions</h3>
-
-            <p>
-              Attractive exhibitions for jewellery and lifestyle
-              products and brands.
-            </p>
-
+        <!-- 2. SCHOOL & COLLEGE EVENTS -->
+        <div class="service-category">
+          <div class="service-category-image">
+            <img
+              src="https://images.unsplash.com/photo-1529390079861-591de354faf5?auto=format&fit=crop&w=1000&q=85"
+              alt="School and college student event">
+            <div class="service-category-label">Education Events</div>
           </div>
-
+          <div class="service-category-content">
+            <h3>School & College Events</h3>
+            <p>Students, teachers aur alumni ke liye memorable educational events.</p>
+            <ul class="service-list">
+              <li>School Reunions</li>
+              <li>College Reunions</li>
+              <li>Alumni Meets</li>
+              <li>Annual Functions</li>
+              <li>Farewell Parties</li>
+              <li>Freshers Parties</li>
+              <li>Cultural Programs</li>
+              <li>Prize Distribution</li>
+            </ul>
+          </div>
         </div>
 
-
-        <div class="service-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1445205170230-053b83016050?auto=format&fit=crop&w=900&q=80"
-            alt="Clothing and Fashion Exhibition">
-
-          <div class="service-content">
-
-            <h3>Clothing & Fashion</h3>
-
-            <p>
-              Fashion, clothing and lifestyle exhibitions and
-              product showcases.
-            </p>
-
+        <!-- 3. WEDDING & TRADITIONAL EVENTS -->
+        <div class="service-category">
+          <div class="service-category-image">
+            <img
+              src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1000&q=85"
+              alt="Indian traditional wedding celebration">
+            <div class="service-category-label">Traditional Events</div>
           </div>
-
+          <div class="service-category-content">
+            <h3>Wedding & Traditional Events</h3>
+            <p>Bharatiya parampara aur family traditions ke saath special functions.</p>
+            <ul class="service-list">
+              <li>Engagement</li>
+              <li>Haldi Ceremony</li>
+              <li>Mehndi Ceremony</li>
+              <li>Sangeet</li>
+              <li>Wedding Functions</li>
+              <li>Reception</li>
+              <li>Traditional Ceremonies</li>
+              <li>Family Ritual Events</li>
+            </ul>
+          </div>
         </div>
 
-
-        <div class="service-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=900&q=80"
-            alt="Automobile Exhibition">
-
-          <div class="service-content">
-
-            <h3>Automobile Exhibitions</h3>
-
-            <p>
-              Professional exhibitions for cars, bikes and
-              automobile products.
-            </p>
-
+        <!-- 4. CORPORATE EVENTS -->
+        <div class="service-category">
+          <div class="service-category-image">
+            <img
+              src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1000&q=85"
+              alt="Corporate business event">
+            <div class="service-category-label">Business Events</div>
           </div>
-
-        </div>
-
-
-        <div class="service-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=900&q=80"
-            alt="Product and Trade Exhibition">
-
-          <div class="service-content">
-
-            <h3>Product & Trade Exhibitions</h3>
-
-            <p>
-              Trade exhibitions that connect businesses,
-              products and customers.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="service-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1528698827591-e19ccd7bc23d?auto=format&fit=crop&w=900&q=80"
-            alt="Handloom and Handicrafts">
-
-          <div class="service-content">
-
-            <h3>Handloom & Handicrafts</h3>
-
-            <p>
-              Opportunities to showcase traditional handloom,
-              handicrafts and local products.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="service-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=80"
-            alt="Food and Lifestyle Exhibition">
-
-          <div class="service-content">
-
-            <h3>Food & Lifestyle Exhibitions</h3>
-
-            <p>
-              Exhibitions and experiences related to food,
-              lifestyle and everyday products.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="service-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80"
-            alt="Property Exhibition">
-
-          <div class="service-content">
-
-            <h3>Property Exhibitions</h3>
-
-            <p>
-              Customer-focused exhibitions for property and
-              real estate projects.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="service-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=900&q=80"
-            alt="Live Concert">
-
-          <div class="service-content">
-
-            <h3>Live Concerts</h3>
-
-            <p>
-              Music, entertainment and live performance events.
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <div class="service-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
-            alt="Corporate Event">
-
-          <div class="service-content">
-
+          <div class="service-category-content">
             <h3>Corporate Events</h3>
-
-            <p>
-              Meetings, corporate celebrations, launches and
-              professional business events.
-            </p>
-
+            <p>Businesses, companies aur professional teams ke liye organized events.</p>
+            <ul class="service-list">
+              <li>Corporate Meetings</li>
+              <li>Conferences</li>
+              <li>Seminars</li>
+              <li>Product Launches</li>
+              <li>Award Functions</li>
+              <li>Team-Building Events</li>
+              <li>Corporate Parties</li>
+              <li>Business Gatherings</li>
+            </ul>
           </div>
-
         </div>
 
-
-        <div class="service-card">
-
-          <img
-            src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=900&q=80"
-            alt="Birthday and Family Event">
-
-          <div class="service-content">
-
-            <h3>Birthday & Family Events</h3>
-
-            <p>
-              Birthday parties, family functions and private
-              celebrations of all sizes.
-            </p>
-
+        <!-- 5. EXHIBITIONS & BUSINESS SHOWS -->
+        <div class="service-category">
+          <div class="service-category-image">
+            <img
+              src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85"
+              alt="Business exhibition and product showcase">
+            <div class="service-category-label">Exhibitions</div>
           </div>
-
+          <div class="service-category-content">
+            <h3>Exhibitions & Business Shows</h3>
+            <p>Products, brands aur businesses ko customers tak pahunchane ke liye exhibitions.</p>
+            <ul class="service-list">
+              <li>Jewellery Exhibitions</li>
+              <li>Clothing Exhibitions</li>
+              <li>Fashion Exhibitions</li>
+              <li>Automobile Exhibitions</li>
+              <li>Product Exhibitions</li>
+              <li>Trade Shows</li>
+              <li>Handloom & Handicrafts</li>
+              <li>Property Exhibitions</li>
+              <li>Food & Lifestyle Exhibitions</li>
+            </ul>
+          </div>
         </div>
 
+        <!-- 6. ENTERTAINMENT & LIVE EVENTS -->
+        <div class="service-category">
+          <div class="service-category-image">
+            <img
+              src="https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1000&q=85"
+              alt="Live entertainment concert event">
+            <div class="service-category-label">Entertainment</div>
+          </div>
+          <div class="service-category-content">
+            <h3>Entertainment & Live Events</h3>
+            <p>Music, dance, entertainment aur live performances ke colorful events.</p>
+            <ul class="service-list">
+              <li>Dandiya Nights</li>
+              <li>Garba Events</li>
+              <li>Live Concerts</li>
+              <li>Live Music Shows</li>
+              <li>DJ Nights</li>
+              <li>Cultural Shows</li>
+              <li>Stage Programs</li>
+              <li>Entertainment Nights</li>
+            </ul>
+          </div>
+        </div>
 
-        <!-- NO PHOTO -->
+        <!-- 7. VENUE, DECORATION & CATERING -->
+        <div class="service-category">
+          <div class="service-category-image">
+            <img
+              src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?auto=format&fit=crop&w=1000&q=85"
+              alt="Indian event decoration and dining arrangement">
+            <div class="service-category-label">Event Support</div>
+          </div>
+          <div class="service-category-content">
+            <h3>Venue, Decoration & Catering</h3>
+            <p>Event ke liye venue se lekar decoration, sound, lighting aur food arrangements.</p>
+            <ul class="service-list">
+              <li>Venue Booking</li>
+              <li>Event Decoration</li>
+              <li>Stage Decoration</li>
+              <li>Lighting & Sound</li>
+              <li>Theme Decoration</li>
+              <li>Catering Services</li>
+              <li>Food & Beverage</li>
+              <li>Complete Event Setup</li>
+            </ul>
+          </div>
+        </div>
 
-        <div class="service-card">
-
-          <div class="service-content festival-card">
-
+        <!-- 8. FESTIVALS & SPECIAL CELEBRATIONS - NO PHOTO -->
+        <div class="service-category no-photo">
+          <div class="service-category-content">
             <h3>Festivals & Special Celebrations</h3>
-
-            <p>
-              Customized celebrations and event management
-              for festivals, cultural programs and special occasions.
-            </p>
-
+            <p>Indian festivals, cultural occasions aur special celebrations ke customized events.</p>
+            <ul class="service-list">
+              <li>Diwali Events</li>
+              <li>Holi Events</li>
+              <li>Navratri Celebrations</li>
+              <li>Independence Day Events</li>
+              <li>Republic Day Events</li>
+              <li>Cultural Celebrations</li>
+              <li>Community Events</li>
+              <li>Special Occasions</li>
+            </ul>
           </div>
-
         </div>
-
 
       </div>
-
     </div>
-
   </section>
 
 
@@ -1573,18 +1591,72 @@
                   Select Event
                 </option>
 
-                <option>Dandiya / Garba Night</option>
-                <option>Jewellery Exhibition</option>
-                <option>Clothing & Fashion Exhibition</option>
-                <option>Automobile Exhibition</option>
-                <option>Product & Trade Exhibition</option>
-                <option>Handloom & Handicrafts</option>
-                <option>Food & Lifestyle Exhibition</option>
-                <option>Property Exhibition</option>
-                <option>Live Concert</option>
-                <option>Corporate Event</option>
-                <option>Birthday / Family Event</option>
-                <option>Festival / Special Celebration</option>
+                <optgroup label="Family & Social Events">
+                  <option>Birthday Party</option>
+                  <option>Anniversary Celebration</option>
+                  <option>Family Reunion</option>
+                  <option>Family Get-Together</option>
+                  <option>Kitty Party</option>
+                  <option>Engagement Function</option>
+                  <option>Private Party</option>
+                </optgroup>
+                <optgroup label="School & College Events">
+                  <option>School Reunion</option>
+                  <option>College Reunion</option>
+                  <option>Alumni Meet</option>
+                  <option>Annual Function</option>
+                  <option>Farewell Party</option>
+                  <option>Freshers Party</option>
+                  <option>Cultural Program</option>
+                </optgroup>
+                <optgroup label="Wedding & Traditional Events">
+                  <option>Engagement</option>
+                  <option>Haldi Ceremony</option>
+                  <option>Mehndi Ceremony</option>
+                  <option>Sangeet</option>
+                  <option>Wedding Function</option>
+                  <option>Reception</option>
+                </optgroup>
+                <optgroup label="Corporate Events">
+                  <option>Corporate Meeting</option>
+                  <option>Conference</option>
+                  <option>Seminar</option>
+                  <option>Product Launch</option>
+                  <option>Award Function</option>
+                  <option>Corporate Party</option>
+                </optgroup>
+                <optgroup label="Exhibitions & Business Shows">
+                  <option>Jewellery Exhibition</option>
+                  <option>Clothing & Fashion Exhibition</option>
+                  <option>Automobile Exhibition</option>
+                  <option>Product & Trade Exhibition</option>
+                  <option>Handloom & Handicrafts</option>
+                  <option>Food & Lifestyle Exhibition</option>
+                  <option>Property Exhibition</option>
+                </optgroup>
+                <optgroup label="Entertainment & Live Events">
+                  <option>Dandiya Night</option>
+                  <option>Garba Event</option>
+                  <option>Live Concert</option>
+                  <option>Live Music Show</option>
+                  <option>DJ Night</option>
+                  <option>Cultural Show</option>
+                </optgroup>
+                <optgroup label="Venue, Decoration & Catering">
+                  <option>Venue Booking</option>
+                  <option>Event Decoration</option>
+                  <option>Stage Decoration</option>
+                  <option>Lighting & Sound</option>
+                  <option>Catering Service</option>
+                  <option>Food & Beverage</option>
+                </optgroup>
+                <optgroup label="Festivals & Special Celebrations">
+                  <option>Festival Celebration</option>
+                  <option>Diwali Event</option>
+                  <option>Holi Event</option>
+                  <option>Navratri Celebration</option>
+                  <option>Other Special Celebration</option>
+                </optgroup>
 
               </select>
 
