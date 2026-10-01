@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Events & Exhibitions | Creating Experiences</title>
+
+<meta name="description" content="We create memorable events, exhibitions, festivals, entertainment experiences and celebrations.">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#fff;
+    color:#171717;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+.container{
+    width:92%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* TOP BAR */
+
+.topbar{
+    background:#111;
+    color:#fff;
+    text-align:center;
+    padding:8px 15px;
+    font-size:13px;
+}
+
+/* HEADER */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    border-bottom:1px solid #eee;
+}
+
+.nav{
+    min-height:74px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.logo{
+    font-size:22px;
+    font-weight:900;
+    letter-spacing:-1px;
+}
+
+.logo span{
+    display:block;
+    font-size:10px;
+    letter-spacing:2px;
+    color:#777;
+    margin-top:-3px;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.nav-links a{
+    font-size:14px;
+    font-weight:700;
+}
+
+.nav-links a:hover{
+    color:#d7195b;
+}
+
+.menu-btn{
+    display:none;
+    border:0;
+    background:#111;
+    color:white;
+    padding:10px 13px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+    min-height:650px;
+    display:flex;
+    align-items:center;
+    position:relative;
+    overflow:hidden;
+    background:
+    linear-gradient(110deg,rgba(0,0,0,.88),rgba(0,0,0,.45)),
+    url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+    color:white;
+}
+
+.hero-content{
+    max-width:760px;
+    padding:80px 0;
+}
+
+.small-title{
+    display:inline-block;
+    padding:7px 13px;
+    border:1px solid rgba(255,255,255,.4);
+    border-radius:30px;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:clamp(42px,7vw,78px);
+    line-height:1.02;
+    letter-spacing:-3px;
+    margin-bottom:25px;
+}
+
+.hero h1 span{
+    color:#ffd34d;
+}
+
+.hero p{
+    max-width:650px;
+    font-size:19px;
+    color:#eee;
+    margin-bottom:32px;
+}
+
+.buttons{
+    display:flex;
+    gap:13px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 22px;
+    border-radius:8px;
+    font-weight:800;
+    font-size:15px;
+    transition:.2s;
+}
+
+.btn-primary{
+    background:#ffd34d;
+    color:#111;
+}
+
+.btn-primary:hover{
+    transform:translateY(-2px);
+}
+
+.btn-light{
+    border:1px solid rgba(255,255,255,.6);
+    color:#fff;
+}
+
+.btn-light:hover{
+    background:#fff;
+    color:#111;
+}
+
+/* INTRO */
+
+.intro{
+    padding:90px 0;
+}
+
+.section-tag{
+    color:#d7195b;
+    font-size:13px;
+    font-weight:900;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin-bottom:12px;
+}
+
+.section-title{
+    font-size:clamp(32px,5vw,52px);
+    line-height:1.1;
+    letter-spacing:-2px;
+    margin-bottom:18px;
+}
+
+.section-text{
+    color:#666;
+    max-width:700px;
+    font-size:17px;
+}
+
+/* SERVICES */
+
+.services{
+    padding:90px 0;
+    background:#f7f7f7;
+}
+
+.service-grid{
+    margin-top:45px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.service{
+    background:white;
+    padding:30px 24px;
+    border-radius:15px;
+    border:1px solid #e8e8e8;
+    transition:.25s;
+}
+
+.service:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+}
+
+.icon{
+    width:52px;
+    height:52px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:12px;
+    background:#111;
+    color:#ffd34d;
+    font-size:23px;
+    margin-bottom:20px;
+}
+
+.service h3{
+    margin-bottom:10px;
+    font-size:20px;
+}
+
+.service p{
+    color:#666;
+    font-size:14px;
+}
+
+/* EVENTS */
+
+.events{
+    padding:95px 0;
+}
+
+.event-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    margin-top:45px;
+}
+
+.event-card{
+    overflow:hidden;
+    border-radius:16px;
+    background:#111;
+    color:#fff;
+}
+
+.event-image{
+    height:240px;
+    background-size:cover;
+    background-position:center;
+}
+
+.event-content{
+    padding:23px;
+}
+
+.event-content h3{
+    font-size:23px;
+    margin-bottom:7px;
+}
+
+.event-content p{
+    color:#bbb;
+    font-size:14px;
+}
+
+/* IMAGE BACKGROUNDS */
+
+.event-one{
+    background-image:url("https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1000&q=80");
+}
+
+.event-two{
+    background-image:url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1000&q=80");
+}
+
+.event-three{
+    background-image:url("https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&w=1000&q=80");
+}
+
+/* EXHIBITIONS */
+
+.exhibition{
+    padding:95px 0;
+    background:#111;
+    color:#fff;
+}
+
+.exhibition-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.exhibition .section-text{
+    color:#bbb;
+}
+
+.exhibition-list{
+    margin-top:25px;
+    display:grid;
+    gap:13px;
+}
+
+.exhibition-list div{
+    padding:14px 16px;
+    border:1px solid #333;
+    border-radius:9px;
+}
+
+.exhibition-image{
+    min-height:430px;
+    border-radius:20px;
+    background:
+    linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.25)),
+    url("https://images.unsplash.com/photo-1559223607-a43c990c692c?auto=format&fit=crop&w=1200&q=85")
+    center/cover;
+}
+
+/* WHY US */
+
+.why{
+    padding:95px 0;
+}
+
+.why-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    margin-top:45px;
+}
+
+.point{
+    padding:23px 0;
+    border-bottom:1px solid #ddd;
+}
+
+.point strong{
+    font-size:18px;
+}
+
+.point p{
+    color:#666;
+    margin-top:5px;
+}
+
+/* WORK */
+
+.work{
+    padding:95px 0;
+    background:#f7f7f7;
+}
+
+.work-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:14px;
+    margin-top:45px;
+}
+
+.work-card{
+    height:270px;
+    border-radius:14px;
+    overflow:hidden;
+    position:relative;
+    background-size:cover;
+    background-position:center;
+}
+
+.work-card div{
+    position:absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    padding:20px;
+    color:white;
+    background:linear-gradient(transparent,rgba(0,0,0,.85));
+    font-weight:800;
+}
+
+.work1{
+    background-image:url("https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80");
+}
+
+.work2{
+    background-image:url("https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=80");
+}
+
+.work3{
+    background-image:url("https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&w=800&q=80");
+}
+
+.work4{
+    background-image:url("https://images.unsplash.com/photo-1531058020387-3be344556be6?auto=format&fit=crop&w=800&q=80");
+}
+
+/* CTA */
+
+.cta{
+    padding:100px 0;
+    background:#ffd34d;
+}
+
+.cta-box{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:30px;
+}
+
+.cta h2{
+    font-size:clamp(32px,5vw,55px);
+    line-height:1.05;
+    letter-spacing:-2px;
+}
+
+.cta p{
+    margin-top:12px;
+    max-width:600px;
+}
+
+/* CONTACT */
+
+.contact{
+    padding:95px 0;
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    margin-top:45px;
+}
+
+.contact-card{
+    padding:28px;
+    border:1px solid #ddd;
+    border-radius:15px;
+    margin-bottom:15px;
+}
+
+.contact-card small{
+    display:block;
+    color:#777;
+    margin-bottom:5px;
+}
+
+.contact-card strong{
+    font-size:19px;
+}
+
+.form{
+    display:grid;
+    gap:14px;
+}
+
+.form input,
+.form textarea,
+.form select{
+    width:100%;
+    padding:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-family:inherit;
+    font-size:15px;
+}
+
+.form textarea{
+    min-height:130px;
+    resize:vertical;
+}
+
+.form button{
+    border:0;
+    cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+    background:#111;
+    color:#fff;
+    padding:55px 0 25px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:35px;
+    border-bottom:1px solid #333;
+}
+
+footer h3{
+    margin-bottom:15px;
+}
+
+footer p,
+footer a{
+    color:#aaa;
+    font-size:14px;
+}
+
+.footer-links{
+    display:grid;
+    gap:8px;
+}
+
+.copyright{
+    padding-top:25px;
+    color:#777;
+    font-size:13px;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .nav-links{
+        display:none;
+        position:absolute;
+        top:74px;
+        left:0;
+        right:0;
+        background:#fff;
+        padding:20px;
+        border-bottom:1px solid #ddd;
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .service-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .event-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .work-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .exhibition-box,
+    .why-grid,
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .cta-box{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+}
+
+@media(max-width:600px){
+
+    .topbar{
+        font-size:11px;
+    }
+
+    .hero{
+        min-height:590px;
+    }
+
+    .hero h1{
+        font-size:45px;
+        letter-spacing:-2px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .intro,
+    .services,
+    .events,
+    .exhibition,
+    .why,
+    .work,
+    .contact{
+        padding:70px 0;
+    }
+
+    .service-grid,
+    .event-grid,
+    .work-grid{
+        grid-template-columns:1fr;
+    }
+
+    .exhibition-image{
+        min-height:320px;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    Events • Exhibitions • Festivals • Entertainment • Celebrations
+</div>
+
+<header>
+    <div class="container nav">
+
+        <a href="#home" class="logo">
+            AURAE
+            <span>EVENTS & EXPERIENCES</span>
+        </a>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#events">Events</a>
+            <a href="#exhibitions">Exhibitions</a>
+            <a href="#work">Our Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+
+    </div>
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+    <div class="container">
+
+        <div class="hero-content">
+
+            <div class="small-title">
+                EVENTS • EXHIBITIONS • EXPERIENCES
+            </div>
+
+            <h1>
+                We create
+                <span>experiences</span>
+                people remember.
+            </h1>
+
+            <p>
+                From cultural festivals and entertainment shows
+                to exhibitions, corporate events and public celebrations —
+                we plan, create and manage experiences that bring people together.
+            </p>
+
+            <div class="buttons">
+                <a href="#events" class="btn btn-primary">
+                    Explore Our Events
+                </a>
+
+                <a href="#contact" class="btn btn-light">
+                    Plan Your Event
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+    <div class="container">
+
+        <div class="section-tag">WHAT WE DO</div>
+
+        <h2 class="section-title">
+            One team for your complete event experience.
+        </h2>
+
+        <p class="section-text">
+            You bring the idea. We take care of the experience.
+            Whether it is a small celebration, a large public event,
+            a corporate gathering or a complete exhibition,
+            we help turn ideas into real experiences.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services">
+    <div class="container">
+
+        <div class="section-tag">OUR SERVICES</div>
+
+        <h2 class="section-title">
+            Everything you need to make an event happen.
+        </h2>
+
+        <div class="service-grid">
+
+            <div class="service">
+                <div class="icon">★</div>
+                <h3>Event Management</h3>
+                <p>
+                    Complete planning and management for events of different sizes.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="icon">◆</div>
+                <h3>Exhibitions</h3>
+                <p>
+                    Exhibition planning, stalls, displays, branding and visitor experience.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="icon">♪</div>
+                <h3>Entertainment</h3>
+                <p>
+                    Music, artists, performances and entertainment experiences.
+                </p>
+            </div>
+
+            <div class="service">
+                <div class="icon">+</div>
+                <h3>Branding & Promotion</h3>
+                <p>
+                    Event branding, promotion and audience engagement solutions.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- EVENTS -->
+
+<section class="events" id="events">
+    <div class="container">
+
+        <div class="section-tag">EVENT CATEGORIES</div>
+
+        <h2 class="section-title">
+            Different events. One creative team.
+        </h2>
+
+        <p class="section-text">
+            We work across different types of events and celebrations.
+        </p>
+
+        <div class="event-grid">
+
+            <div class="event-card">
+                <div class="event-image event-one"></div>
+                <div class="event-content">
+                    <h3>Cultural Events</h3>
+                    <p>
+                        Festivals, traditional celebrations, community events and more.
+                    </p>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-image event-two"></div>
+                <div class="event-content">
+                    <h3>Corporate Events</h3>
+                    <p>
+                        Meetings, launches, conferences and professional gatherings.
+                    </p>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-image event-three"></div>
+                <div class="event-content">
+                    <h3>Entertainment Events</h3>
+                    <p>
+                        Music, dance, live performances and public entertainment.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+
+<!-- EXHIBITIONS -->
+
+<section class="exhibition" id="exhibitions">
+
+    <div class="container exhibition-box">
+
+        <div>
+
+            <div class="section-tag">
+                EXHIBITIONS
+            </div>
+
+            <h2 class="section-title">
+                Exhibitions that attract attention.
+            </h2>
+
+            <p class="section-text">
+                From planning the layout to creating visitor-friendly
+                spaces, we help create exhibitions that are easy to explore
+                and memorable to experience.
+            </p>
+
+            <div class="exhibition-list">
+
+                <div>✓ Exhibition Planning</div>
+                <div>✓ Stall & Display Management</div>
+                <div>✓ Branding & Visuals</div>
+                <div>✓ Visitor Experience</div>
+
+            </div>
+
+        </div>
+
+        <div class="exhibition-image"></div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT / WHY -->
+
+<section class="why" id="about">
+
+    <div class="container">
+
+        <div class="section-tag">ABOUT US</div>
+
+        <h2 class="section-title">
+            We believe an event should be easy to experience.
+        </h2>
+
+        <div class="why-grid">
+
+            <div>
+
+                <div class="point">
+                    <strong>Simple for the audience</strong>
+                    <p>
+                        Clear information, easy navigation and an experience people can enjoy.
+                    </p>
+                </div>
+
+                <div class="point">
+                    <strong>Creative by design</strong>
+                    <p>
+                        Every event gets its own look, feel and identity.
+                    </p>
+                </div>
+
+            </div>
+
+            <div>
+
+                <div class="point">
+                    <strong>Planned from start to finish</strong>
+                    <p>
+                        We focus on the details that make an event work smoothly.
+                    </p>
+                </div>
+
+                <div class="point">
+                    <strong>Built for different audiences</strong>
+                    <p>
+                        From public celebrations to business events and exhibitions.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- OUR WORK -->
+
+<section class="work" id="work">
+
+    <div class="container">
+
+        <div class="section-tag">OUR WORK</div>
+
+        <h2 class="section-title">
+            Experiences in every form.
+        </h2>
+
+        <div class="work-grid">
+
+            <div class="work-card work1">
+                <div>Cultural & Festival Events</div>
+            </div>
+
+            <div class="work-card work2">
+                <div>Corporate Experiences</div>
+            </div>
+
+            <div class="work-card work3">
+                <div>Conferences & Exhibitions</div>
+            </div>
+
+            <div class="work-card work4">
+                <div>Public & Entertainment Events</div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section class="cta">
+
+    <div class="container cta-box">
+
+        <div>
+
+            <h2>
+                Have an event idea?
+            </h2>
+
+            <p>
+                Tell us what you are planning. Let's turn the idea into an experience.
+            </p>
+
+        </div>
+
+        <a href="#contact" class="btn" style="background:#111;color:#fff;">
+            Start a Conversation
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+    <div class="container">
+
+        <div class="section-tag">CONTACT</div>
+
+        <h2 class="section-title">
+            Let's create something together.
+        </h2>
+
+        <div class="contact-grid">
+
+            <div>
+
+                <div class="contact-card">
+                    <small>Call / WhatsApp</small>
+                    <strong>+91 XXXXX XXXXX</strong>
+                </div>
+
+                <div class="contact-card">
+                    <small>Email</small>
+                    <strong>hello@yourcompany.com</strong>
+                </div>
+
+                <div class="contact-card">
+                    <small>Location</small>
+                    <strong>Dhanbad, Jharkhand, India</strong>
+                </div>
+
+            </div>
+
+
+            <form class="form" onsubmit="sendMessage(event)">
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Mobile Number"
+                    required
+                >
+
+                <select id="eventType" required>
+                    <option value="">What do you need?</option>
+                    <option>Event Management</option>
+                    <option>Exhibition</option>
+                    <option>Corporate Event</option>
+                    <option>Cultural Event</option>
+                    <option>Entertainment Event</option>
+                    <option>Other</option>
+                </select>
+
+                <textarea
+                    id="message"
+                    placeholder="Tell us a little about your event..."
+                ></textarea>
+
+                <button class="btn btn-primary" type="submit">
+                    Send Enquiry
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+
+                <h3>AURAE</h3>
+
+                <p>
+                    Events, exhibitions and experiences designed
+                    to bring people together.
+                </p>
+
+            </div>
+
+            <div>
+
+                <h3>Quick Links</h3>
+
+                <div class="footer-links">
+                    <a href="#home">Home</a>
+                    <a href="#events">Events</a>
+                    <a href="#exhibitions">Exhibitions</a>
+                    <a href="#contact">Contact</a>
+                </div>
+
+            </div>
+
+            <div>
+
+                <h3>Connect</h3>
+
+                <div class="footer-links">
+                    <a href="#">Facebook</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">YouTube</a>
+                    <a href="#">WhatsApp</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+            © 2026 AURAE Events & Experiences. All rights reserved.
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+function toggleMenu(){
+
+    const menu = document.getElementById("navLinks");
+
+    menu.classList.toggle("show");
+
+}
+
+
+function sendMessage(event){
+
+    event.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const phone = document.getElementById("phone").value;
+    const type = document.getElementById("eventType").value;
+    const message = document.getElementById("message").value;
+
+    const whatsappNumber = "91XXXXXXXXXX";
+
+    const text =
+        "Hello, I want to enquire about an event.%0A%0A" +
+        "Name: " + encodeURIComponent(name) +
+        "%0AMobile: " + encodeURIComponent(phone) +
+        "%0AEvent Type: " + encodeURIComponent(type) +
+        "%0AMessage: " + encodeURIComponent(message);
+
+    window.open(
+        "https://wa.me/" + whatsappNumber + "?text=" + text,
+        "_blank"
+    );
+
+}
+
+</script>
+
+</body>
+</html>
